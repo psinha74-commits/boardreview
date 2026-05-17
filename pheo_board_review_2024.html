@@ -1,0 +1,432 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Pheo &amp; Paraganglioma Board Review 2024</title>
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;background:#f5f5f5;min-height:100vh;display:flex;justify-content:center;padding:1rem}
+.app{width:100%;max-width:520px}
+.screen{display:none}.screen.active{display:block}
+.btn{background:#fff;border:1px solid #ddd;border-radius:10px;padding:9px 18px;font-size:14px;cursor:pointer;color:#222;transition:background 0.15s;font-family:inherit}
+.btn:hover{background:#f0f0f0}
+.btn:disabled{opacity:0.35;cursor:default;pointer-events:none}
+.btn-p{background:#993C1D;color:#FAECE7;border-color:#993C1D}.btn-p:hover{background:#D85A30}
+.btn-t{background:#085041;color:#E1F5EE;border-color:#085041}.btn-t:hover{background:#0F6E56}
+.btn-r{background:#A32D2D;color:#FCEBEB;border-color:#A32D2D}.btn-r:hover{background:#c0392b}
+.card{background:#fff;border:1px solid #e5e5e5;border-radius:14px;padding:1.25rem;margin-bottom:1rem}
+.case-card{background:#FAECE7;border:1px solid #F5C4B3;border-radius:14px;padding:1.25rem;margin-bottom:1rem}
+.teach-card{background:#fff;border:1px solid #e5e5e5;border-radius:14px;padding:1.25rem;margin-bottom:1rem}
+.opt{display:flex;align-items:center;gap:10px;padding:12px 14px;border:1px solid #ddd;border-radius:10px;cursor:pointer;font-size:14px;color:#222;background:#fff;text-align:left;width:100%;transition:all 0.15s;font-family:inherit;margin-bottom:8px}
+.opt:hover:not([disabled]){background:#FAECE7;border-color:#F0997B}
+.opt[disabled]{cursor:default}
+.opt.showc{background:#d4edda;border-color:#28a745;color:#155724}
+.opt.wrong{background:#f8d7da;border-color:#dc3545;color:#721c24}
+.letter{width:28px;height:28px;border-radius:50%;background:#f0f0f0;display:flex;align-items:center;justify-content:center;font-size:12px;font-weight:600;flex-shrink:0;color:#555}
+.tbar-wrap{height:5px;background:#eee;border-radius:3px;margin-bottom:1rem;overflow:hidden}
+.tbar{height:100%;border-radius:3px;background:#993C1D;transition:width 0.15s linear}
+.tbar.warn{background:#dc3545}
+.prog-wrap{height:3px;background:#eee;border-radius:2px;margin-bottom:.75rem}
+.prog{height:100%;background:#993C1D;border-radius:2px;transition:width .3s}
+.nav{display:flex;align-items:center;justify-content:space-between;margin-bottom:.75rem;gap:8px}
+.tag{display:inline-block;font-size:11px;font-weight:600;padding:3px 9px;border-radius:8px;margin-bottom:.6rem}
+.tag-q{background:#FAECE7;color:#993C1D}
+.tag-tf{background:#E1F5EE;color:#085041}
+.tag-case{background:#FAECE7;color:#993C1D}
+.tag-teach{background:#f0f0f0;color:#555}
+.lrow{display:flex;align-items:center;gap:10px;padding:9px 12px;border-radius:10px;background:#f7f7f7;font-size:13px;margin-bottom:5px}
+.lrank{width:22px;text-align:center;color:#999;font-weight:600;font-size:12px}
+.lname{flex:1;color:#222;font-size:13px}
+.lscore{font-weight:600;color:#993C1D;font-size:13px}
+.joined-pill{display:inline-flex;align-items:center;gap:5px;font-size:12px;padding:4px 10px;border-radius:8px;background:#f0f0f0;color:#555;margin:2px}
+.big-num{font-size:56px;font-weight:700;color:#993C1D;text-align:center;line-height:1;letter-spacing:8px}
+input{width:100%;padding:11px 13px;border:1px solid #ddd;border-radius:10px;font-size:15px;background:#fff;color:#222;margin-bottom:8px;font-family:inherit}
+input:focus{outline:none;border-color:#993C1D}
+.err{font-size:12px;color:#dc3545;margin-top:4px;min-height:16px}
+.podium{display:flex;align-items:flex-end;justify-content:center;gap:8px;margin:1rem 0 1.5rem}
+.pod{display:flex;flex-direction:column;align-items:center;gap:4px}
+.pod-name{font-size:11px;color:#666;text-align:center;max-width:72px;overflow:hidden;white-space:nowrap;text-overflow:ellipsis}
+.pod-pts{font-size:11px;font-weight:600;color:#993C1D}
+.pod-block{border-radius:4px 4px 0 0;width:68px;display:flex;align-items:center;justify-content:center;font-size:22px}
+.bullet{font-size:14px;color:#333;line-height:1.8;white-space:pre-line}
+label{font-size:12px;color:#666;display:block;margin-bottom:4px}
+</style>
+</head>
+<body>
+<div class="app">
+
+<div id="s-home" class="screen active">
+  <div class="card" style="border-left:4px solid #993C1D;border-radius:0 14px 14px 0;margin-top:.5rem">
+    <div style="font-size:19px;font-weight:700;color:#111;margin-bottom:4px">Pheochromocytoma &amp; Paraganglioma</div>
+    <div style="font-size:13px;color:#666">Dr. Partha S. Sinha · Board Review · Live multiplayer</div>
+    <div style="margin-top:10px;display:flex;gap:8px;flex-wrap:wrap">
+      <span style="font-size:11px;background:#FAECE7;color:#993C1D;padding:3px 8px;border-radius:6px">20 questions</span>
+      <span style="font-size:11px;background:#FAECE7;color:#993C1D;padding:3px 8px;border-radius:6px">7 cases</span>
+      <span style="font-size:11px;background:#E1F5EE;color:#085041;padding:3px 8px;border-radius:6px">No login needed</span>
+    </div>
+  </div>
+  <div style="display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-bottom:1rem">
+    <button class="btn btn-p" style="padding:18px 8px;font-size:14px;display:flex;flex-direction:column;align-items:center;gap:6px;width:100%" onclick="showHostSetup()">
+      <span style="font-size:26px">🎓</span>
+      <span style="font-weight:600">I am the host</span>
+      <span style="font-size:11px;opacity:.8">Run the session</span>
+    </button>
+    <button class="btn btn-t" style="padding:18px 8px;font-size:14px;display:flex;flex-direction:column;align-items:center;gap:6px;width:100%" onclick="showJoin()">
+      <span style="font-size:26px">👤</span>
+      <span style="font-weight:600">I am a participant</span>
+      <span style="font-size:11px;opacity:.8">Join on any device</span>
+    </button>
+  </div>
+  <p style="font-size:12px;color:#999;text-align:center">Open this page on any browser · No login needed</p>
+</div>
+
+<div id="s-host-setup" class="screen">
+  <div class="nav">
+    <button class="btn" style="font-size:12px;padding:6px 12px" onclick="go('s-home')">&larr; Back</button>
+    <span style="font-size:13px;color:#666">Host setup</span><span></span>
+  </div>
+  <div class="card">
+    <p style="font-size:14px;font-weight:600;margin-bottom:12px">Session settings</p>
+    <label>Timer per question (seconds)</label>
+    <div style="display:flex;align-items:center;gap:10px;margin:6px 0 16px">
+      <input type="range" min="15" max="90" value="30" step="5" id="timer-setting" style="flex:1;margin-bottom:0;padding:0;border:none;background:none" oninput="document.getElementById('timer-val').textContent=this.value+'s'">
+      <span id="timer-val" style="font-size:15px;font-weight:600;color:#993C1D;min-width:36px">30s</span>
+    </div>
+    <label>Your name</label>
+    <input type="text" id="host-name" placeholder="Dr. Sinha" maxlength="24" style="margin-top:4px">
+    <div class="err" id="host-name-err"></div>
+  </div>
+  <button class="btn btn-p" style="width:100%;padding:14px;font-size:15px" onclick="hostCreate()">&#9658; Create session</button>
+</div>
+
+<div id="s-lobby" class="screen">
+  <div class="nav">
+    <button class="btn btn-r" style="font-size:12px;padding:6px 12px" onclick="hostEnd()">&times; End</button>
+    <span style="font-size:13px;font-weight:600">Waiting for participants</span>
+    <button class="btn btn-p" style="font-size:12px;padding:6px 12px" onclick="hostStartSession()">&#9658; Start</button>
+  </div>
+  <div class="card" style="text-align:center;padding:2rem 1.25rem">
+    <p style="font-size:12px;color:#666;margin-bottom:10px">Share this PIN with participants</p>
+    <div class="big-num" id="pin-display">----</div>
+    <p style="font-size:12px;color:#666;margin-top:12px">Open this same page on any browser<br>Tap <strong>"I am a participant"</strong> &rarr; enter PIN &rarr; join</p>
+  </div>
+  <p style="font-size:12px;color:#666;margin-bottom:6px">Joined (<span id="joined-count">0</span>)</p>
+  <div id="joined-list" style="display:flex;flex-wrap:wrap;gap:4px;min-height:32px"></div>
+</div>
+
+<div id="s-host-slide" class="screen">
+  <div class="nav">
+    <button class="btn btn-r" style="font-size:12px;padding:6px 10px" onclick="hostEnd()">&times;</button>
+    <span style="font-size:12px;color:#666" id="hs-counter"></span>
+    <span style="font-size:12px;color:#999" id="hs-joined"></span>
+  </div>
+  <div class="prog-wrap"><div class="prog" id="hs-prog"></div></div>
+  <div id="hs-content"></div>
+  <div style="display:flex;gap:8px;margin-top:.5rem">
+    <button class="btn" id="hs-prev-btn" style="flex:1" onclick="hostPrev()">&larr; Prev</button>
+    <button class="btn btn-p" id="hs-next-btn" style="flex:1" onclick="hostNext()">Next &rarr;</button>
+  </div>
+</div>
+
+<div id="s-host-q" class="screen">
+  <div class="nav">
+    <button class="btn btn-r" style="font-size:12px;padding:6px 10px" onclick="hostEnd()">&times;</button>
+    <span style="font-size:12px;color:#666" id="hq-counter">Q1</span>
+    <span style="font-size:16px;font-weight:700;color:#993C1D" id="hq-timer-txt">30</span>
+  </div>
+  <div class="tbar-wrap"><div class="tbar" id="hq-tbar"></div></div>
+  <div id="hq-case" style="margin-bottom:.75rem"></div>
+  <div class="card">
+    <div id="hq-tag" class="tag tag-q"></div>
+    <p style="font-size:15px;font-weight:600;color:#111;line-height:1.55;margin-bottom:1rem" id="hq-text"></p>
+    <div id="hq-opts"></div>
+    <div id="hq-explain" style="display:none;padding:.9rem;background:#f7f7f7;border-radius:10px;font-size:13px;color:#555;line-height:1.6;margin-top:.5rem"></div>
+  </div>
+  <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:.5rem">
+    <span style="font-size:12px;color:#666">Answered: <span id="hq-ans-count">0</span> / <span id="hq-total-count">0</span></span>
+    <span style="font-size:11px;color:#28a745" id="hq-sync"></span>
+  </div>
+  <div id="hq-live-lb" style="margin-bottom:.75rem"></div>
+  <div style="display:flex;gap:8px">
+    <button class="btn" id="hq-reveal-btn" style="flex:1" onclick="hostReveal()">&#128065; Reveal</button>
+    <button class="btn btn-p" id="hq-next-btn" style="flex:1" onclick="hostNextAfterQ()">Next &rarr;</button>
+  </div>
+</div>
+
+<div id="s-join" class="screen">
+  <div class="nav">
+    <button class="btn" style="font-size:12px;padding:6px 12px" onclick="go('s-home')">&larr; Back</button>
+    <span style="font-size:13px;color:#666">Join session</span><span></span>
+  </div>
+  <div class="card">
+    <label>Session PIN (from your host)</label>
+    <input type="text" id="join-pin" placeholder="1234" maxlength="4" style="margin-top:4px;letter-spacing:8px;font-size:28px;text-align:center;font-weight:700" inputmode="numeric">
+    <label style="margin-top:8px">Your name</label>
+    <input type="text" id="join-name" placeholder="Your name" maxlength="24" style="margin-top:4px">
+    <div class="err" id="join-err"></div>
+  </div>
+  <button class="btn btn-t" style="width:100%;padding:14px;font-size:15px" onclick="fellowJoin()">&#8594; Join</button>
+</div>
+
+<div id="s-fellow-wait" class="screen">
+  <div style="text-align:center;padding:3rem 1rem">
+    <div style="font-size:40px;margin-bottom:12px">⏳</div>
+    <p style="font-size:18px;font-weight:600;color:#111" id="fw-name"></p>
+    <p style="font-size:13px;color:#666;margin-top:6px">Waiting for host...</p>
+    <div style="margin-top:2rem">
+      <p style="font-size:12px;color:#666">Your score</p>
+      <p style="font-size:40px;font-weight:700;color:#993C1D;margin-top:4px" id="fw-score">0</p>
+      <p style="font-size:12px;color:#999;margin-top:8px" id="fw-rank"></p>
+    </div>
+  </div>
+</div>
+
+<div id="s-fellow-q" class="screen">
+  <div class="nav">
+    <span style="font-size:12px;color:#666" id="fq-name"></span>
+    <span style="font-size:16px;font-weight:700;color:#993C1D" id="fq-timer-txt">30</span>
+  </div>
+  <div class="tbar-wrap"><div class="tbar" id="fq-tbar"></div></div>
+  <div class="card">
+    <div id="fq-tag" class="tag tag-q"></div>
+    <p style="font-size:15px;font-weight:600;color:#111;line-height:1.55;margin-bottom:1rem" id="fq-text"></p>
+    <div id="fq-opts"></div>
+  </div>
+</div>
+
+<div id="s-fellow-result" class="screen">
+  <div class="card" style="text-align:center;padding:2.5rem 1.25rem">
+    <div style="font-size:48px;margin-bottom:12px" id="fr-icon"></div>
+    <p style="font-size:20px;font-weight:700;color:#111;margin-bottom:8px" id="fr-msg"></p>
+    <p style="font-size:13px;color:#666;margin-bottom:1.5rem" id="fr-detail"></p>
+    <p style="font-size:12px;color:#666">Total score</p>
+    <p style="font-size:40px;font-weight:700;color:#993C1D;margin-top:4px" id="fr-total"></p>
+  </div>
+  <p style="text-align:center;font-size:13px;color:#999">Waiting for next question...</p>
+</div>
+
+<div id="s-final" class="screen">
+  <div class="nav">
+    <button class="btn" style="font-size:12px;padding:6px 12px" onclick="go('s-home')">&#8962; Home</button>
+    <span style="font-size:14px;font-weight:600">Final results</span>
+    <button class="btn btn-p" style="font-size:12px;padding:6px 12px" onclick="showHostSetup()">&#8635; New</button>
+  </div>
+  <div id="final-podium"></div>
+  <div id="final-lb"></div>
+</div>
+
+</div>
+<script>
+const SUPABASE_URL='https://sdcrgozivsnzxdmftcfp.supabase.co';
+const SUPABASE_KEY='eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InNkY3Jnb3ppdnNuenhkbWZ0Y2ZwIiwicm9sZSI6ImFub24iLCJpYXQiOjE3Nzg5NjM5MzgsImV4cCI6MjA5NDUzOTkzOH0.M_10_OypW6OOLglNdP8bNTrLRrxyrRf4Er_hxL3dxHU';
+const H={'Content-Type':'application/json','apikey':SUPABASE_KEY,'Authorization':'Bearer '+SUPABASE_KEY};
+const L=['A','B','C','D'];
+
+const SLIDES=[
+  // ── CASE 1: Secondary HTN / Secondary HTN workup ──
+  {type:'case',title:'Case 1',body:'30-year-old male referred for endocrine evaluation for hypertension\nDiagnosed at age 28 \u00b7 Longstanding weight issues \u00b7 No other PMHx\nMedications: Lisinopril 10 mg daily\nVS: BMI 29.8 \u00b7 P 62 \u00b7 BP 154/74\nBoth parents and one older sibling with HTN \u00b7 One grandfather with CAD'},
+  {type:'quiz',title:'Question 1',caseRef:'Case 1: 30M, BMI 29.8, BP 154/74 on lisinopril, diagnosed age 28, family Hx HTN',q:'Which of the following warrants workup for secondary hypertension in this patient?',opts:['Age < 35','Uncontrolled BP on an antihypertensive','Family history of hypertension','None of the above'],c:3,type:'quiz',explain:'None of the individual options alone fully qualifies here \u2014 but taken together, age < 30 (not 35), uncontrolled BP on one agent, and absence of obesity/typical family history pattern all raise concern. The correct board answer is "none of the above" as listed individually, since no single listed factor is the sole criterion. The full clinical picture warrants workup. Ref: Calhoun Circulation 2008'},
+  {type:'teach',title:'Secondary HTN \u2014 When to Suspect',body:'\u2022 Age < 30 without obesity or family history\n\u2022 BP requiring 3 or more agents\n\u2022 Abrupt deterioration of BP control\n\u2022 Electrolyte abnormalities\n\u2022 Stigmata of endocrine disorder\n\nRef: Calhoun, Circulation 2008'},
+  // Case 1 continued: endocrine visit with borderline metanephrines
+  {type:'case',title:'Case 1 \u2014 Endocrine Visit',body:'BMP normal \u00b7 TSH 3.8 \u00b7 Renin 8.1 (H) \u00b7 Aldosterone 3\nMetanephrine 44 pg/mL (<57) \u2014 normal\nNormetanephrine 170 pg/mL (\u2264148) \u2014 mildly elevated\nChromogranin A 87 ng/mL (25\u2013140) \u2014 normal\nDST: Cortisol 0.8 \u2014 suppressed\nBP 151/70 \u00b7 P 62 \u00b7 Obese \u00b7 Fatigue and sleepiness'},
+  {type:'quiz',title:'Question 2',caseRef:'Case 1: Normetanephrine 170 (mild), normal metanephrine, normal CgA, normal DST',q:'Which is the next best step in evaluation?',opts:['Polysomnography','Doppler ultrasound of the renal arteries','Meta-iodobenzylguanidine (MIBG) scan of the adrenal glands','Saline suppression test'],c:0,type:'quiz',explain:'This patient has obesity, fatigue, daytime somnolence and hypertension \u2014 classic for obstructive sleep apnea. Polysomnography is the next best step. The mildly elevated normetanephrine with normal metanephrine most likely represents a stress response. MIBG is not indicated without a confirmed adrenal mass or clearly elevated catecholamines.'},
+  {type:'teach',title:'Secondary HTN \u2014 Differential',body:'Endocrine:\n\u2022 Primary hyperaldosteronism \u00b7 Cushing\u2019s/MACS\n\u2022 Hypothyroidism \u00b7 Pheochromocytoma* \u00b7 Paraganglioma*\n\nOther:\n\u2022 Obstructive sleep apnea (daytime somnolence, obesity)\n\u2022 Renovascular HTN (elevated renin + aldosterone)\n\u2022 Coarctation of aorta (diminished LE pulses)\n\n*rare \u2014 pretest probability low\n\nRef: Calhoun 2008 \u00b7 Arlt Harrison\u2019s Endocrinology 2013'},
+  // Case 2: adrenal mass / pheo confirmed
+  {type:'case',title:'Case 2',body:'55-year-old male with alcohol use disorder\nPresents with abdominal pain \u00b7 Found to have 3 cm left adrenal mass on CT\nImaging: 40 Hounsfield Units (lipid-poor)\nHTN on HCTZ \u00b7 Denies palpitations, anxiety, syncope\nFamily notes anxiety when not drinking; smokes to calm himself\nBP 152/71 \u00b7 P 100'},
+  {type:'quiz',title:'Question 3',caseRef:'Case 2: 55M, 3 cm adrenal mass, 40 HU, HTN, denies symptoms, alcohol use',q:'What additional test will help confirm your diagnosis?',opts:['MRI of adrenal glands','Chromogranin A','CT-guided biopsy of adrenal gland','None of the above'],c:3,type:'quiz',explain:'None of the above is correct. MRI does not confirm biochemical diagnosis. Chromogranin A is a marker but not diagnostic alone. CT-guided biopsy is contraindicated without ruling out pheochromocytoma \u2014 can trigger hypertensive crisis. The correct approach is serum and 24-hour urine metanephrines, which were already ordered. The diagnosis is confirmed biochemically.'},
+  {type:'case',title:'Case 2 \u2014 Laboratories',body:'Metanephrine: 525 pg/mL (<57) \u2014 9\u00d7 elevated\nNormetanephrine: 249 pg/mL (\u2264148) \u2014 elevated\n24-hour urine metanephrine: 5\u00d7 ULN\n24-hour urine normetanephrine: 2\u00d7 ULN\n\u2192 Referred to surgery'},
+  {type:'quiz',title:'Question 4',caseRef:'Case 2: Pheochromocytoma confirmed, referred to surgery',q:'What blood pressure regimen do you recommend pre-operatively?',opts:['Phenoxybenzamine followed by metoprolol','Metoprolol followed by phenoxybenzamine','Phenoxybenzamine alone','Phentermine followed by metoprolol'],c:0,type:'quiz',explain:'Alpha blockade (phenoxybenzamine) MUST precede beta blockade. Beta-blockers alone cause unopposed alpha-adrenergic stimulation \u2192 hypertensive crisis. Titrate phenoxybenzamine until orthostatic, then add metoprolol. Phentermine is a stimulant and contraindicated. Ref: Neumann NEJM 2019'},
+  {type:'teach',title:'Pre-operative BP Management',body:'\u26a0\ufe0f AVOID beta-blockade without prior alpha-blockade\n\u2192 Unopposed alpha stimulation \u2192 hypertensive crisis\n\nStep 1: Phenoxybenzamine (alpha blockade)\n\u2192 Titrate until orthostatic\nStep 2: Add metoprolol (beta blockade)\n\nCalcium channel blockade is an acceptable alternative'},
+  {type:'teach',title:'Pheochromocytoma \u2014 Key Facts',body:'\u2022 Incidence: 0.8/100,000 person-years\n\u2022 0.2\u20131% of HTN \u00b7 1\u20135% of all incidentalomas\n\u2022 Classic triad: Sweating \u00b7 Headache \u00b7 Tachycardia\n  (Most do NOT have the full triad)\n\u2022 Usually ~4 cm \u00b7 HU >20 (lipid poor)\n\u2022 Biochemical testing: Serum + 24h urine metanephrines\n  NPV 0.99 \u00b7 High false-positive rate for normetanephrine\n\u2022 Treatment: Surgical resection\n\nRef: Sherlock Endocr Rev 2020 \u00b7 Neumann NEJM 2019'},
+  // Case 2 follow-up: MEN2a
+  {type:'case',title:'Case 2 \u2014 Post-op Follow-up',body:'Patient does well post-operatively\nChart review: Ca 11 mg/dL \u00b7 PTH 50 (10\u201370) \u2014 inappropriately normal\nWas on HCTZ at the time (which typically lowers PTH)\nNo longer uses alcohol \u00b7 BP normal'},
+  {type:'quiz',title:'Question 5',caseRef:'Case 2: Pheochromocytoma, post-op hypercalcemia Ca 11, PTH 50, was on HCTZ',q:'Which statement is true?',opts:['He should be referred to have the other adrenal removed','No further workup needed as hypercalcemia was from HCTZ','Genetic testing recommended','He should undergo a pituitary MRI'],c:2,type:'quiz',explain:'All pheochromocytoma patients warrant genetic testing \u2014 35\u201340% arise from genetic syndromes. The inappropriate PTH with hypercalcemia while on HCTZ (which lowers PTH) raises concern for primary hyperparathyroidism as part of MEN2a. Pituitary MRI would be MEN1. Ref: Neumann Endocr Rel Cancer 2018'},
+  {type:'quiz',title:'Question 6',caseRef:'Case 2: Pheochromocytoma with hypercalcemia and inappropriately normal PTH \u2014 genetic testing ordered',q:'Which genetic test would most likely be useful?',opts:['SDHB','MEN1','NF1','RET'],c:3,type:'quiz',explain:'RET mutation (MEN2a) = Medullary thyroid cancer (100%) + Pheochromocytoma (50%) + Primary hyperparathyroidism (20%). The combination of pheo + hypercalcemia + inappropriately normal PTH strongly points to MEN2a. RET genetic testing is indicated. Ref: Neumann Endocr Rel Cancer 2018'},
+  {type:'quiz',title:'Question 7',caseRef:'Case 2: MEN2a confirmed by RET mutation \u2014 pheo + primary hyperparathyroidism',q:'Besides pheochromocytoma, medullary thyroid cancer, and primary hyperparathyroidism, what else is seen in MEN2a?',opts:['Pituitary adenomas','Cutaneous lichen amyloidosis','Renal cell carcinoma','None of the above'],c:1,type:'quiz',explain:'MEN2a also includes cutaneous lichen amyloidosis (CLA) in ~5% of cases \u2014 pruritic skin lesions over the upper back. Pituitary adenomas = MEN1. Renal cell carcinoma = VHL. Ref: Neumann Endocr Rel Cancer 2018'},
+  {type:'teach',title:'MEN2a \u2014 Features',body:'RET (Rearranged During Transfection) mutation\n\u2022 Medullary thyroid cancer (100%)\n\u2022 Pheochromocytoma (50%)\n\u2022 Primary hyperparathyroidism (20%)\n\u2022 Cutaneous lichen amyloidosis (5%)\n\nHigh metanephrines (epinephrine-secreting)\n\u2192 Cortisol drives PNMT: NE\u2192Epi conversion\n\nRef: Neumann Endocr Rel Cancer 2018'},
+  // Case 3: incidental adrenal nodule / paraganglioma
+  {type:'case',title:'Case 3',body:'61-year-old female \u00b7 4.1 cm right adrenal nodule found incidentally\nNo hypertension \u00b7 Obese (BMI 33.2) \u00b7 11 Hounsfield Units (lipid-rich)\nMetanephrine: 60 pg/mL (<57) \u2014 borderline\nNormetanephrine: 170 pg/mL (\u2264148) \u2014 mildly elevated\n\nOct 2016: CT \u2192 2.1 cm renal aneurysm \u2192 endovascular stenting Dec 2016\nMarch 2022: MRI \u2192 retroperitoneal mass, adrenal glands normal\n\u2192 Believed to be paraganglioma'},
+  {type:'quiz',title:'Question 8',caseRef:'Case 3: Suspected paraganglioma on MRI, borderline metanephrines, adrenal glands normal',q:'Which test should be ordered next?',opts:['Dexamethasone suppression test','24-hour urine metanephrines','Renin and aldosterone','Meta-iodobenzylguanidine (MIBG) scan of the adrenal glands'],c:1,type:'quiz',explain:'24-hour urine metanephrines should be ordered to confirm biochemical activity of the suspected paraganglioma. DST is for Cushing\u2019s. Renin/aldosterone is for primary hyperaldosteronism. MIBG is used for localization/staging after biochemical confirmation, not as the initial test.'},
+  {type:'case',title:'Case 3 \u2014 Physical Exam',body:'HTN diagnosed late 40s \u2014 now on amlodipine + carvedilol\nOccasional lightheadedness \u00b7 Denies palpitations\n\nSitting: P 70 \u00b7 BP 140/78\nStanding: P 92 \u00b7 BP 114/70\nNo skin lesions \u00b7 Cardiovascular exam normal'},
+  {type:'quiz',title:'Question 9',caseRef:'Case 3: Suspected paraganglioma, sitting BP 140/78 \u2192 standing BP 114/70',q:'Which of the following statements are true regarding this paraganglioma?',opts:['Based on location, unlikely to be functional','Rarely have malignant potential','Genetic testing generally not recommended','None of the above'],c:3,type:'quiz',explain:'None of the above. Abdominal/retroperitoneal paragangliomas ARE often functional (NE-secreting). They have significant malignant potential (15\u201335%). Genetic testing is recommended for ALL paragangliomas. Ref: Neumann NEJM 2019 \u00b7 Buffet Best Pract Endocr Clin Res 2020'},
+  {type:'quiz',title:'Question 10',caseRef:'Case 3: Sitting BP 140/78, Standing P 92, BP 114/70',q:'Does this patient meet criteria for orthostatic hypotension?',opts:['True','False'],c:0,type:'tf',explain:'True. Orthostatic hypotension = drop in systolic BP \u226520 mmHg or diastolic \u226510 mmHg within 3 minutes of standing. Here SBP drops from 140 to 114 \u2014 a drop of 26 mmHg. This meets criteria and is consistent with volume depletion from chronic catecholamine excess.'},
+  // Case 3 labs: paraganglioma pattern
+  {type:'case',title:'Case 3 \u2014 Laboratory Data',body:'Serum: Metanephrine 44 pg/mL (normal) \u00b7 Normetanephrine 777 pg/mL (5\u00d7 ULN)\nChromogranin A 279 ng/mL (elevated)\n\n24-hour urine:\nMetanephrine 158 mcg (normal) \u00b7 Normetanephrine 1615 mcg (elevated)\nNorepinephrine 261 mcg (elevated) \u00b7 Epinephrine 4 mcg (normal)\nDopamine 473 mcg (high normal)'},
+  {type:'quiz',title:'Question 11',caseRef:'Case 3: Normetanephrine 5\u00d7 elevated, normal metanephrine, elevated urine norepinephrine',q:'Which of the following explains the discrepancy between normetanephrine and metanephrine?',opts:['Effect of cortisol','Lab error','Absence of PMNT enzyme','This is a nonspecific stress response'],c:2,type:'quiz',explain:'Paragangliomas arise from extra-adrenal sympathetic ganglia and lack exposure to adrenal cortisol. Without cortisol-driven upregulation of PNMT (phenylethanolamine N-methyltransferase), they cannot convert norepinephrine to epinephrine. Result: elevated normetanephrine (NE metabolite), normal metanephrine (Epi metabolite). Ref: Eisehofer Pharm Rev 2004'},
+  {type:'teach',title:'Catecholamine Physiology',body:'Pheochromocytoma (intra-adrenal):\n\u2022 Cortisol \u2192 upregulates PNMT \u2192 NE\u2192Epi conversion\n\u2022 Secretes NE + Epi \u2192 elevated metanephrine + normetanephrine\n\nParaganglioma (extra-adrenal):\n\u2022 No cortisol exposure \u2192 absent PNMT\n\u2022 Secretes NE predominantly\n\u2192 Elevated normetanephrine, normal metanephrine\n\nRef: Eisehofer Pharm Rev 2004 \u00b7 Mahata J Biol Chem 2003'},
+  // Case 4: VHL genetics
+  {type:'case',title:'Case 4',body:'26-year-old female with paravertebral paraganglioma\nHistory of CNS and retinal hemangioblastomas\nYou order genetic testing'},
+  {type:'quiz',title:'Question 12',caseRef:'Case 4: 26F, paravertebral paraganglioma, CNS and retinal hemangioblastomas',q:'Which is the most likely gene involved?',opts:['MEN1','RET','SDHD','VHL'],c:3,type:'quiz',explain:'CNS and retinal hemangioblastomas are pathognomonic for Von Hippel-Lindau (VHL) syndrome. VHL also causes renal cell carcinoma, pancreatic NETs, and both pheo/paraganglioma. Ref: Neumann Endocr Rel Cancer 2018'},
+  {type:'quiz',title:'Question 13',caseRef:'Case 4: 26F with VHL syndrome and paravertebral paraganglioma',q:'What hormonal profile is most likely?',opts:['Elevated normetanephrine, normal metanephrine','Elevated normetanephrine and elevated metanephrine','Normal normetanephrine, elevated metanephrine','All are equally likely'],c:0,type:'quiz',explain:'VHL-associated pheo/paragangliomas lack PNMT upregulation and predominantly secrete norepinephrine \u2192 elevated normetanephrine with normal metanephrine. Contrasts with MEN2a (high metanephrines). Ref: Neumann Endocr Rel Cancer 2018'},
+  {type:'teach',title:'VHL vs MEN2a \u2014 Biochemical Distinction',body:'MEN2a (RET mutation):\n\u2022 High metanephrines (epinephrine-secreting)\n\u2022 Cortisol drives high PNMT \u2192 NE\u2192Epi\n\nVHL:\n\u2022 High normetanephrines (norepinephrine-secreting)\n\u2022 Lack PNMT upregulation\n\u2022 Also: hemangioblastomas, renal cell carcinoma\n\nRef: Neumann Endocr Rel Cancer 2018'},
+  // Case 5: NF1 / lifestyle
+  {type:'case',title:'Case 5',body:'26-year-old male with characteristic caf\u00e9-au-lait spots and neurofibromas\nDiagnosis: Neurofibromatosis type 1 (NF1)\nBP 148/90 \u00b7 P 88 \u00b7 BMI 28\nSeeks counseling regarding risk of tumors and BP management'},
+  {type:'quiz',title:'Question 14',caseRef:'Case 5: 26M with NF1, BP 148/90',q:'Which is the next best step?',opts:['Counsel on lifestyle modifications','Start metoprolol','Order serum metanephrines','Start growth hormone treatment'],c:2,type:'quiz',explain:'NF1 is associated with pheochromocytoma/paraganglioma in ~3% of patients. In a young patient with NF1 and hypertension, serum metanephrines should be ordered before starting antihypertensive therapy to rule out catecholamine-secreting tumor. Ref: Gutmann Nat Rev Dis Prim 2017'},
+  {type:'quiz',title:'Question 15',caseRef:'Case 5: 26M with NF1 and hypertension',q:'Which is the most accurate statement?',opts:['Most likely has NF1 mutation, offspring have 50% chance of inheritance','Most likely has SDHD mutation, offspring have 50% chance of inheritance','Most likely has NF1 mutation, offspring have 25% chance of inheritance','Most likely has SDHD mutation, nil chance of paternal inheritance'],c:0,type:'quiz',explain:'NF1 follows autosomal dominant inheritance \u2192 50% chance offspring are affected. The mutation is NF1, not SDHD. SDHD has paternal imprinting which affects penetrance but still follows AD inheritance. Ref: Gutmann Nat Rev Dis Prim 2017'},
+  // Case 6: head/neck paraganglioma / SDHD
+  {type:'case',title:'Case 6',body:'Patient recently moved from the Netherlands\nMother had head and neck tumors \u2014 SDHD mutation confirmed\nHe is found to have head and neck paragangliomas\nAsymptomatic \u00b7 Normal BP \u00b7 Normal metanephrines'},
+  {type:'quiz',title:'Question 16',caseRef:'Case 6: SDHD mutation, head and neck paragangliomas, asymptomatic, normal metanephrines',q:'The patient is likely to also have head and neck paragangliomas.',opts:['True','False'],c:1,type:'tf',explain:'False \u2014 he already HAS head and neck paragangliomas as stated in the case. The question likely refers to additional abdominal/sympathetic paragangliomas. SDHD is most commonly associated with head and neck (parasympathetic) paragangliomas which are usually non-functional.'},
+  {type:'quiz',title:'Question 17',caseRef:'SDHx mutations \u2014 prognosis comparison',q:'Which SDHx mutation has the worst prognosis?',opts:['SDHA','SDHB','SDHC','SDHD'],c:1,type:'quiz',explain:'SDHB mutations are associated with abdominal catecholamine-secreting tumors, younger age at presentation, and significantly higher malignant potential and mortality compared to other SDHx subtypes. Ref: Buffet Best Pract Endocr Clin Res 2020'},
+  {type:'teach',title:'SDHx Mutations',body:'SDHD \u2014 Most common \u00b7 Paternal imprinting\n\u2022 Head and neck paragangliomas\n\u2022 Usually non-functional\n\nSDHB \u2014 Second most common\n\u2022 Abdominal catecholamine-secreting tumors\n\u2022 Younger age at presentation\n\u2022 HIGHEST malignant potential and mortality\n\u2022 Also predisposes to GIST\n\nRef: Buffet Best Pract Endocr Clin Res 2020'},
+  // Head & neck paraganglioma anatomy
+  {type:'teach',title:'Head & Neck Paragangliomas',body:'Parasympathetic neuroectodermal origin\n\u2022 Usually nonfunctional (no catecholamine secretion)\n\u2022 Vasovagal \u00b7 Brachiomeric\n\u2022 Examples: carotid body, glomus jugulare\n\nSympathetic paragangliomas (abdominal):\n\u2022 Often functional \u2192 NE-secreting\n\u2022 Higher malignant potential\n\nRef: Neumann NEJM 2019'},
+  {type:'quiz',title:'Question 18',caseRef:'Head and neck paragangliomas \u2014 origin',q:'Head and neck paragangliomas are usually derived from:',opts:['Parasympathetic ganglia','Sympathetic ganglia','Metastases from the adrenal medulla','Pre-ganglion axons'],c:0,type:'quiz',explain:'Head and neck paragangliomas arise from parasympathetic neuroectodermal tissue. They are usually non-functional (no catecholamine secretion). Abdominal/aorticosympathetic paragangliomas arise from sympathetic ganglia and are often functional. Ref: Neumann NEJM 2019'},
+  // Case 7: MTC / MEN2 pre-op
+  {type:'case',title:'Case 7',body:'33-year-old male referred urgently\n3.3 cm thyroid nodule \u2192 biopsy: medullary thyroid cancer\nSurgery scheduled for next week\nBP 158/92 \u00b7 P 96 \u00b7 Reports occasional diaphoresis'},
+  {type:'quiz',title:'Question 19',caseRef:'Case 7: 33M with medullary thyroid cancer, surgery next week, BP 158/92, diaphoresis',q:'Which test should you order next?',opts:['Calcium with PTH','Calcitonin','TSH','Plasma metanephrines'],c:3,type:'quiz',explain:'Medullary thyroid cancer strongly suggests MEN2a. Pheochromocytoma MUST be ruled out before thyroid surgery \u2014 undiagnosed pheo during anesthesia can cause life-threatening hypertensive crisis. Plasma metanephrines are the first and most urgent test. Calcium/PTH and calcitonin are also relevant but secondary. Ref: Neumann Endocr Rel Cancer 2018'},
+  // SNS anatomy
+  {type:'quiz',title:'Question 20',caseRef:'SNS \u2014 adrenal anatomy',q:'The sympathetic nervous system acts directly in the adrenal via:',opts:['Zona fasciculata','Zona glomerulosa','Medulla','None of the above'],c:2,type:'quiz',explain:'The sympathetic nervous system innervates the adrenal medulla directly via preganglionic cholinergic fibers. The chromaffin cells of the medulla are modified postganglionic sympathetic neurons that secrete catecholamines (norepinephrine and epinephrine) in response to SNS activation. The zona fasciculata (cortisol) and zona glomerulosa (aldosterone) are regulated by ACTH and angiotensin II respectively, not directly by the SNS. Ref: Karemaker Physiol Meas 2017'},
+  {type:'teach',title:'Thank You!',body:'Pheochromocytoma & Paraganglioma Board Review Complete\n\nKey takeaways:\n\u2022 Alpha blockade before beta blockade \u2014 always\n\u2022 Rule out pheo before ANY adrenal procedure or surgery\n\u2022 Genetic testing for ALL cases of pheo and paraganglioma\n\u2022 Paraganglioma \u2192 elevated normetanephrine (absent PNMT)\n\u2022 MEN2a \u2192 elevated metanephrine (high PNMT from cortisol)\n\u2022 SDHB \u2192 worst prognosis \u00b7 VHL \u2192 hemangioblastomas\n\nRef: Neumann NEJM 2019 \u00b7 Sherlock Endocr Rev 2020 \u00b7 Buffet Best Pract 2020'},
+];
+
+const QUIZ_SLIDES=SLIDES.filter(s=>s.type==='quiz'||s.type==='tf');
+let PIN='',NAME='',ROLE='',TSEC=30,curIdx=0,curQIdx=0,tIv=null,tLeft=30,fAnswered=false,myScore=0,pollIv=null,lastQNum=-1,lastPhase='';
+
+function go(id){document.querySelectorAll('.screen').forEach(s=>s.classList.remove('active'));document.getElementById(id).classList.add('active');}
+function showHostSetup(){go('s-host-setup');}
+function showJoin(){go('s-join');}
+
+async function dbGet(pin){try{const r=await fetch(`${SUPABASE_URL}/rest/v1/quiz_sessions?id=eq.${pin}&select=state`,{headers:H});const d=await r.json();return d&&d.length?d[0].state:null;}catch(e){return null;}}
+async function dbSet(pin,state){try{await fetch(`${SUPABASE_URL}/rest/v1/quiz_sessions`,{method:'POST',headers:{...H,'Prefer':'resolution=merge-duplicates'},body:JSON.stringify({id:pin,state,updated_at:new Date().toISOString()})});}catch(e){}}
+function mkPIN(){return String(Math.floor(1000+Math.random()*9000));}
+
+async function hostCreate(){
+  const hn=document.getElementById('host-name').value.trim();
+  if(!hn){document.getElementById('host-name-err').textContent='Please enter your name';return;}
+  TSEC=parseInt(document.getElementById('timer-setting').value)||30;
+  ROLE='host';NAME=hn;PIN=mkPIN();curIdx=0;
+  await dbSet(PIN,{phase:'lobby',slideIdx:0,qNum:-1,revealed:false,timer:TSEC,players:{},answers:{},ts:Date.now()});
+  document.getElementById('pin-display').textContent=PIN;
+  go('s-lobby');pollLobby();
+}
+function pollLobby(){
+  clearInterval(pollIv);
+  pollIv=setInterval(async()=>{const st=await dbGet(PIN);if(!st)return;const names=Object.keys(st.players||{});document.getElementById('joined-count').textContent=names.length;document.getElementById('joined-list').innerHTML=names.map(n=>`<span class="joined-pill">👤 ${n}</span>`).join('');},2000);
+}
+async function hostStartSession(){clearInterval(pollIv);curIdx=0;await renderHostSlide();}
+async function renderHostSlide(){
+  const s=SLIDES[curIdx];
+  const st=await dbGet(PIN)||{players:{},answers:{}};
+  const qNum=(s.type==='quiz'||s.type==='tf')?QUIZ_SLIDES.indexOf(s):-1;
+  await dbSet(PIN,{...st,phase:(s.type==='quiz'||s.type==='tf')?'question':'slide',slideIdx:curIdx,qNum,revealed:false,timer:TSEC});
+  if(s.type==='quiz'||s.type==='tf'){
+    curQIdx=qNum;go('s-host-q');renderHostQ(s,st,qNum);
+    clearInterval(tIv);tLeft=TSEC;
+    document.getElementById('hq-reveal-btn').disabled=false;
+    document.getElementById('hq-next-btn').textContent=curIdx===SLIDES.length-1?'Finish':'Next \u2192';
+    updHTimer(1);
+    tIv=setInterval(async()=>{tLeft=Math.max(0,tLeft-0.1);updHTimer(tLeft/TSEC);if(tLeft<=0){clearInterval(tIv);await hostReveal();}if(Math.round(tLeft*10)%20===0)await refreshLive();},100);
+  } else {
+    go('s-host-slide');
+    document.getElementById('hs-counter').textContent=`Slide ${curIdx+1} of ${SLIDES.length}`;
+    document.getElementById('hs-prog').style.width=((curIdx+1)/SLIDES.length*100)+'%';
+    document.getElementById('hs-prev-btn').disabled=curIdx===0;
+    document.getElementById('hs-next-btn').textContent=curIdx===SLIDES.length-1?'Finish':'Next \u2192';
+    document.getElementById('hs-joined').textContent=Object.keys(st.players||{}).length+' joined';
+    let html='';
+    if(s.type==='teach') html=`<div class="teach-card"><span class="tag tag-teach">Teaching point</span><div style="font-size:16px;font-weight:600;color:#111;margin-bottom:.75rem">${s.title}</div><div class="bullet">${s.body}</div></div>`;
+    else if(s.type==='case') html=`<div class="case-card"><span class="tag tag-case">Clinical case</span><div style="font-size:16px;font-weight:600;color:#993C1D;margin-bottom:.75rem">${s.title}</div><div class="bullet">${s.body}</div></div>`;
+    document.getElementById('hs-content').innerHTML=html;
+  }
+}
+function renderHostQ(s,st,qNum){
+  const total=QUIZ_SLIDES.length;
+  document.getElementById('hq-counter').textContent=`Q${qNum+1} of ${total}`;
+  document.getElementById('hq-tag').textContent=s.type==='tf'?'True or false':`Question ${qNum+1} of ${total}`;
+  document.getElementById('hq-tag').className='tag '+(s.type==='tf'?'tag-tf':'tag-q');
+  document.getElementById('hq-text').textContent=s.q;
+  document.getElementById('hq-explain').style.display='none';
+  document.getElementById('hq-total-count').textContent=Object.keys(st.players||{}).length;
+  document.getElementById('hq-ans-count').textContent='0';
+  document.getElementById('hq-live-lb').innerHTML='';
+  document.getElementById('hq-case').innerHTML=s.caseRef?`<div style="font-size:12px;color:#993C1D;background:#FAECE7;border-radius:8px;padding:8px 12px;margin-bottom:8px">${s.caseRef}</div>`:'';
+  document.getElementById('hq-opts').innerHTML=s.opts.map((o,i)=>`<div class="opt" id="ho${i}"><span class="letter">${L[i]}</span>${o}</div>`).join('');
+}
+function updHTimer(f){const b=document.getElementById('hq-tbar'),t=document.getElementById('hq-timer-txt');if(b){b.style.width=(f*100)+'%';b.className='tbar'+(f<0.25?' warn':'');}if(t)t.textContent=Math.ceil(tLeft);}
+async function refreshLive(){
+  const st=await dbGet(PIN);if(!st)return;
+  const players=st.players||{},answers=st.answers||{},qa=answers[String(curQIdx)]||{};
+  document.getElementById('hq-ans-count').textContent=Object.keys(qa).length;
+  document.getElementById('hq-total-count').textContent=Object.keys(players).length;
+  const sorted=Object.entries(players).sort((a,b)=>b[1]-a[1]).slice(0,5);
+  document.getElementById('hq-live-lb').innerHTML=sorted.map(([n,sc],i)=>`<div class="lrow"><span class="lrank">${i+1}</span><span class="lname">${n}</span>${qa[n]!==undefined?`<span style="font-size:11px;background:#FAECE7;color:#993C1D;padding:2px 6px;border-radius:6px">${Number(qa[n])===QUIZ_SLIDES[curQIdx].c?'\u2713':'\u2717'}</span>`:''}<span class="lscore">${sc}</span></div>`).join('');
+  document.getElementById('hq-sync').textContent='\u25cf live';
+}
+async function hostReveal(){
+  clearInterval(tIv);document.getElementById('hq-reveal-btn').disabled=true;
+  const s=QUIZ_SLIDES[curQIdx];
+  s.opts.forEach((_,i)=>{const el=document.getElementById('ho'+i);if(el)el.className='opt '+(i===s.c?'showc':'wrong');});
+  document.getElementById('hq-explain').style.display='block';
+  document.getElementById('hq-explain').textContent=s.explain||'Correct answer: '+s.opts[s.c];
+  const st=await dbGet(PIN);if(st)await dbSet(PIN,{...st,revealed:true});
+  await refreshLive();
+}
+async function hostNext(){if(curIdx>=SLIDES.length-1){await hostFinish();return;}curIdx++;await renderHostSlide();}
+async function hostPrev(){if(curIdx>0){curIdx--;await renderHostSlide();}}
+async function hostNextAfterQ(){if(curIdx>=SLIDES.length-1){await hostFinish();return;}curIdx++;await renderHostSlide();}
+async function hostFinish(){clearInterval(tIv);const st=await dbGet(PIN);if(st)await dbSet(PIN,{...st,phase:'final'});go('s-final');renderFinal(st);}
+async function hostEnd(){clearInterval(tIv);clearInterval(pollIv);go('s-home');}
+
+function renderFinal(st){
+  const players=st?st.players||{}:{};
+  const sorted=Object.entries(players).sort((a,b)=>b[1]-a[1]);
+  const colors=['#993C1D','#1D9E75','#BA7517'],heights=[110,80,60];
+  const order=sorted.length>=3?[1,0,2]:sorted.length===2?[1,0]:[0];
+  document.getElementById('final-podium').innerHTML=`<div class="podium">${order.filter(i=>i<sorted.length).map(i=>`<div class="pod"><div class="pod-name">${sorted[i][0]}</div><div class="pod-pts">${sorted[i][1]} pts</div><div class="pod-block" style="height:${heights[i]}px;background:${colors[i]};color:white">${['\ud83e\udd47','\ud83e\udd48','\ud83e\udd49'][i]}</div></div>`).join('')}</div>`;
+  document.getElementById('final-lb').innerHTML=sorted.map(([n,s],i)=>`<div class="lrow"><span class="lrank">${['\ud83e\udd47','\ud83e\udd48','\ud83e\udd49'][i]||i+1}</span><span class="lname">${n}</span><span class="lscore">${s} pts</span></div>`).join('');
+}
+
+async function fellowJoin(){
+  const pin=document.getElementById('join-pin').value.trim(),name=document.getElementById('join-name').value.trim();
+  if(!pin||pin.length!==4){document.getElementById('join-err').textContent='Enter the 4-digit PIN';return;}
+  if(!name){document.getElementById('join-err').textContent='Enter your name';return;}
+  document.getElementById('join-err').textContent='Connecting...';
+  const st=await dbGet(pin);
+  if(!st){document.getElementById('join-err').textContent='Session not found \u2014 check the PIN and try again';return;}
+  PIN=pin;NAME=name;ROLE='fellow';myScore=st.players&&st.players[name]?st.players[name]:0;TSEC=st.timer||30;
+  await dbSet(PIN,{...st,players:{...st.players,[name]:myScore}});
+  document.getElementById('join-err').textContent='';
+  document.getElementById('fw-name').textContent='Joined as '+name;
+  document.getElementById('fw-score').textContent=myScore;
+  go('s-fellow-wait');pollFellow();
+}
+function pollFellow(){
+  clearInterval(pollIv);lastQNum=-1;lastPhase='';
+  pollIv=setInterval(async()=>{
+    const st=await dbGet(PIN);if(!st)return;
+    if(st.phase==='final'){clearInterval(pollIv);go('s-final');renderFinal(st);return;}
+    if(st.phase==='question'&&st.qNum!==lastQNum){lastQNum=st.qNum;fAnswered=false;TSEC=st.timer||30;loadFQ(st.qNum);}
+    if(st.phase==='slide'&&lastPhase!=='slide'){lastPhase='slide';go('s-fellow-wait');document.getElementById('fw-score').textContent=myScore;const sorted=Object.entries(st.players||{}).sort((a,b)=>b[1]-a[1]);const rank=sorted.findIndex(([n])=>n===NAME)+1;if(rank>0)document.getElementById('fw-rank').textContent=`Rank ${rank} of ${sorted.length}`;}
+    if(st.phase==='lobby'){lastPhase='lobby';document.getElementById('fw-score').textContent=myScore;}
+    myScore=(st.players||{})[NAME]||myScore;
+  },1500);
+}
+function loadFQ(qNum){
+  clearInterval(tIv);const s=QUIZ_SLIDES[qNum];
+  go('s-fellow-q');
+  document.getElementById('fq-name').textContent=NAME;
+  document.getElementById('fq-tag').textContent=s.type==='tf'?'True or false':`Question ${qNum+1} of ${QUIZ_SLIDES.length}`;
+  document.getElementById('fq-tag').className='tag '+(s.type==='tf'?'tag-tf':'tag-q');
+  document.getElementById('fq-text').textContent=s.q;
+  document.getElementById('fq-opts').innerHTML=s.opts.map((o,i)=>`<button class="opt" onclick="fAnswer(${i},${qNum})"><span class="letter">${L[i]}</span>${o}</button>`).join('');
+  tLeft=TSEC;updFTimer(1);
+  tIv=setInterval(()=>{tLeft=Math.max(0,tLeft-0.1);updFTimer(tLeft/TSEC);if(tLeft<=0){clearInterval(tIv);if(!fAnswered)fAnswer(-1,qNum);}},100);
+}
+function updFTimer(f){const b=document.getElementById('fq-tbar'),t=document.getElementById('fq-timer-txt');if(b){b.style.width=(f*100)+'%';b.className='tbar'+(f<0.25?' warn':'');}if(t)t.textContent=Math.ceil(tLeft);}
+async function fAnswer(idx,qNum){
+  if(fAnswered)return;fAnswered=true;clearInterval(tIv);
+  const s=QUIZ_SLIDES[qNum],correct=idx===s.c,pts=correct?Math.round(100+(tLeft/TSEC)*200):0;
+  if(correct)myScore+=pts;
+  const st=await dbGet(PIN);
+  if(st){const ans=st.answers||{},qa=ans[String(qNum)]||{};qa[NAME]=idx;await dbSet(PIN,{...st,players:{...st.players,[NAME]:myScore},answers:{...ans,[String(qNum)]:qa}});}
+  go('s-fellow-result');
+  document.getElementById('fr-icon').textContent=idx===-1?'\u23f1\ufe0f':correct?'\u2705':'\u274c';
+  document.getElementById('fr-msg').textContent=idx===-1?"Time's up!":correct?'Correct!':'Incorrect';
+  document.getElementById('fr-detail').textContent=correct?`+${pts} points \u2014 faster = more`:`Correct: ${s.opts[s.c]}`;
+  document.getElementById('fr-total').textContent=myScore+' pts';
+  setTimeout(()=>{lastPhase='';go('s-fellow-wait');document.getElementById('fw-score').textContent=myScore;},3500);
+}
+</script>
+</body>
+</html>

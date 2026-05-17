@@ -1,0 +1,458 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Endocrine ITE Board Review 2024</title>
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;background:#f5f5f5;min-height:100vh;display:flex;justify-content:center;padding:1rem}
+.app{width:100%;max-width:520px}
+.screen{display:none}.screen.active{display:block}
+.btn{background:#fff;border:1px solid #ddd;border-radius:10px;padding:9px 18px;font-size:14px;cursor:pointer;color:#222;transition:background 0.15s;font-family:inherit}
+.btn:hover{background:#f0f0f0}
+.btn:disabled{opacity:0.35;cursor:default;pointer-events:none}
+.btn-p{background:#3C3489;color:#EEEDFE;border-color:#3C3489}.btn-p:hover{background:#534AB7}
+.btn-t{background:#085041;color:#E1F5EE;border-color:#085041}.btn-t:hover{background:#0F6E56}
+.btn-r{background:#A32D2D;color:#FCEBEB;border-color:#A32D2D}.btn-r:hover{background:#c0392b}
+.card{background:#fff;border:1px solid #e5e5e5;border-radius:14px;padding:1.25rem;margin-bottom:1rem}
+.case-card{background:#EBF4FF;border:1px solid #B5D4F4;border-radius:14px;padding:1.25rem;margin-bottom:1rem}
+.teach-card{background:#fff;border:1px solid #e5e5e5;border-radius:14px;padding:1.25rem;margin-bottom:1rem}
+.opt{display:flex;align-items:center;gap:10px;padding:12px 14px;border:1px solid #ddd;border-radius:10px;cursor:pointer;font-size:14px;color:#222;background:#fff;text-align:left;width:100%;transition:all 0.15s;font-family:inherit;margin-bottom:8px}
+.opt:hover:not([disabled]){background:#EEEDFE;border-color:#AFA9EC}
+.opt[disabled]{cursor:default}
+.opt.showc{background:#d4edda;border-color:#28a745;color:#155724}
+.opt.wrong{background:#f8d7da;border-color:#dc3545;color:#721c24}
+.letter{width:28px;height:28px;border-radius:50%;background:#f0f0f0;display:flex;align-items:center;justify-content:center;font-size:12px;font-weight:600;flex-shrink:0;color:#555}
+.tbar-wrap{height:5px;background:#eee;border-radius:3px;margin-bottom:1rem;overflow:hidden}
+.tbar{height:100%;border-radius:3px;background:#534AB7;transition:width 0.15s linear}
+.tbar.warn{background:#dc3545}
+.prog-wrap{height:3px;background:#eee;border-radius:2px;margin-bottom:.75rem}
+.prog{height:100%;background:#534AB7;border-radius:2px;transition:width .3s}
+.nav{display:flex;align-items:center;justify-content:space-between;margin-bottom:.75rem;gap:8px}
+.tag{display:inline-block;font-size:11px;font-weight:600;padding:3px 9px;border-radius:8px;margin-bottom:.6rem}
+.tag-q{background:#EEEDFE;color:#3C3489}
+.tag-tf{background:#E1F5EE;color:#085041}
+.tag-case{background:#E6F1FB;color:#185FA5}
+.tag-teach{background:#f0f0f0;color:#555}
+.lrow{display:flex;align-items:center;gap:10px;padding:9px 12px;border-radius:10px;background:#f7f7f7;font-size:13px;margin-bottom:5px}
+.lrank{width:22px;text-align:center;color:#999;font-weight:600;font-size:12px}
+.lname{flex:1;color:#222;font-size:13px}
+.lscore{font-weight:600;color:#3C3489;font-size:13px}
+.joined-pill{display:inline-flex;align-items:center;gap:5px;font-size:12px;padding:4px 10px;border-radius:8px;background:#f0f0f0;color:#555;margin:2px}
+.big-num{font-size:56px;font-weight:700;color:#3C3489;text-align:center;line-height:1;letter-spacing:8px}
+input{width:100%;padding:11px 13px;border:1px solid #ddd;border-radius:10px;font-size:15px;background:#fff;color:#222;margin-bottom:8px;font-family:inherit}
+input:focus{outline:none;border-color:#534AB7}
+.err{font-size:12px;color:#dc3545;margin-top:4px;min-height:16px}
+.podium{display:flex;align-items:flex-end;justify-content:center;gap:8px;margin:1rem 0 1.5rem}
+.pod{display:flex;flex-direction:column;align-items:center;gap:4px}
+.pod-name{font-size:11px;color:#666;text-align:center;max-width:72px;overflow:hidden;white-space:nowrap;text-overflow:ellipsis}
+.pod-pts{font-size:11px;font-weight:600;color:#3C3489}
+.pod-block{border-radius:4px 4px 0 0;width:68px;display:flex;align-items:center;justify-content:center;font-size:22px}
+.bullet{font-size:14px;color:#333;line-height:1.8;white-space:pre-line}
+label{font-size:12px;color:#666;display:block;margin-bottom:4px}
+</style>
+</head>
+<body>
+<div class="app">
+
+<div id="s-home" class="screen active">
+  <div class="card" style="border-left:4px solid #3C3489;border-radius:0 14px 14px 0;margin-top:.5rem">
+    <div style="font-size:19px;font-weight:700;color:#111;margin-bottom:4px">Endocrine ITE Board Review</div>
+    <div style="font-size:13px;color:#666">Dr. Partha S. Sinha · May 2024 · Live multiplayer</div>
+    <div style="margin-top:10px;display:flex;gap:8px;flex-wrap:wrap">
+      <span style="font-size:11px;background:#EEEDFE;color:#3C3489;padding:3px 8px;border-radius:6px">29 questions</span>
+      <span style="font-size:11px;background:#E6F1FB;color:#185FA5;padding:3px 8px;border-radius:6px">7 cases</span>
+      <span style="font-size:11px;background:#E1F5EE;color:#085041;padding:3px 8px;border-radius:6px">No login needed</span>
+    </div>
+  </div>
+  <div style="display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-bottom:1rem">
+    <button class="btn btn-p" style="padding:18px 8px;font-size:14px;display:flex;flex-direction:column;align-items:center;gap:6px;width:100%" onclick="showHostSetup()">
+      <span style="font-size:26px">🎓</span>
+      <span style="font-weight:600">I am the host</span>
+      <span style="font-size:11px;opacity:.8">Run the session</span>
+    </button>
+    <button class="btn btn-t" style="padding:18px 8px;font-size:14px;display:flex;flex-direction:column;align-items:center;gap:6px;width:100%" onclick="showJoin()">
+      <span style="font-size:26px">👤</span>
+      <span style="font-weight:600">I am a participant</span>
+      <span style="font-size:11px;opacity:.8">Join on any device</span>
+    </button>
+  </div>
+  <p style="font-size:12px;color:#999;text-align:center">Open this page on any browser · No login needed</p>
+</div>
+
+<div id="s-host-setup" class="screen">
+  <div class="nav">
+    <button class="btn" style="font-size:12px;padding:6px 12px" onclick="go('s-home')">&larr; Back</button>
+    <span style="font-size:13px;color:#666">Host setup</span><span></span>
+  </div>
+  <div class="card">
+    <p style="font-size:14px;font-weight:600;margin-bottom:12px">Session settings</p>
+    <label>Timer per question (seconds)</label>
+    <div style="display:flex;align-items:center;gap:10px;margin:6px 0 16px">
+      <input type="range" min="15" max="90" value="30" step="5" id="timer-setting" style="flex:1;margin-bottom:0;padding:0;border:none;background:none" oninput="document.getElementById('timer-val').textContent=this.value+'s'">
+      <span id="timer-val" style="font-size:15px;font-weight:600;color:#3C3489;min-width:36px">30s</span>
+    </div>
+    <label>Your name</label>
+    <input type="text" id="host-name" placeholder="Dr. Sinha" maxlength="24" style="margin-top:4px">
+    <div class="err" id="host-name-err"></div>
+  </div>
+  <button class="btn btn-p" style="width:100%;padding:14px;font-size:15px" onclick="hostCreate()">&#9658; Create session</button>
+</div>
+
+<div id="s-lobby" class="screen">
+  <div class="nav">
+    <button class="btn btn-r" style="font-size:12px;padding:6px 12px" onclick="hostEnd()">&times; End</button>
+    <span style="font-size:13px;font-weight:600">Waiting for participants</span>
+    <button class="btn btn-p" style="font-size:12px;padding:6px 12px" onclick="hostStartSession()">&#9658; Start</button>
+  </div>
+  <div class="card" style="text-align:center;padding:2rem 1.25rem">
+    <p style="font-size:12px;color:#666;margin-bottom:10px">Share this PIN with participants</p>
+    <div class="big-num" id="pin-display">----</div>
+    <p style="font-size:12px;color:#666;margin-top:12px">Open this same page on any browser<br>Tap <strong>"I am a participant"</strong> &rarr; enter PIN &rarr; join</p>
+  </div>
+  <p style="font-size:12px;color:#666;margin-bottom:6px">Joined (<span id="joined-count">0</span>)</p>
+  <div id="joined-list" style="display:flex;flex-wrap:wrap;gap:4px;min-height:32px"></div>
+</div>
+
+<div id="s-host-slide" class="screen">
+  <div class="nav">
+    <button class="btn btn-r" style="font-size:12px;padding:6px 10px" onclick="hostEnd()">&times;</button>
+    <span style="font-size:12px;color:#666" id="hs-counter"></span>
+    <span style="font-size:12px;color:#999" id="hs-joined"></span>
+  </div>
+  <div class="prog-wrap"><div class="prog" id="hs-prog"></div></div>
+  <div id="hs-content"></div>
+  <div style="display:flex;gap:8px;margin-top:.5rem">
+    <button class="btn" id="hs-prev-btn" style="flex:1" onclick="hostPrev()">&larr; Prev</button>
+    <button class="btn btn-p" id="hs-next-btn" style="flex:1" onclick="hostNext()">Next &rarr;</button>
+  </div>
+</div>
+
+<div id="s-host-q" class="screen">
+  <div class="nav">
+    <button class="btn btn-r" style="font-size:12px;padding:6px 10px" onclick="hostEnd()">&times;</button>
+    <span style="font-size:12px;color:#666" id="hq-counter">Q1</span>
+    <span style="font-size:16px;font-weight:700;color:#3C3489" id="hq-timer-txt">30</span>
+  </div>
+  <div class="tbar-wrap"><div class="tbar" id="hq-tbar"></div></div>
+  <div id="hq-case" style="margin-bottom:.75rem"></div>
+  <div class="card">
+    <div id="hq-tag" class="tag tag-q"></div>
+    <p style="font-size:15px;font-weight:600;color:#111;line-height:1.55;margin-bottom:1rem" id="hq-text"></p>
+    <div id="hq-opts"></div>
+    <div id="hq-explain" style="display:none;padding:.9rem;background:#f7f7f7;border-radius:10px;font-size:13px;color:#555;line-height:1.6;margin-top:.5rem"></div>
+  </div>
+  <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:.5rem">
+    <span style="font-size:12px;color:#666">Answered: <span id="hq-ans-count">0</span> / <span id="hq-total-count">0</span></span>
+    <span style="font-size:11px;color:#28a745" id="hq-sync"></span>
+  </div>
+  <div id="hq-live-lb" style="margin-bottom:.75rem"></div>
+  <div style="display:flex;gap:8px">
+    <button class="btn" id="hq-reveal-btn" style="flex:1" onclick="hostReveal()">&#128065; Reveal</button>
+    <button class="btn btn-p" id="hq-next-btn" style="flex:1" onclick="hostNextAfterQ()">Next &rarr;</button>
+  </div>
+</div>
+
+<div id="s-join" class="screen">
+  <div class="nav">
+    <button class="btn" style="font-size:12px;padding:6px 12px" onclick="go('s-home')">&larr; Back</button>
+    <span style="font-size:13px;color:#666">Join session</span><span></span>
+  </div>
+  <div class="card">
+    <label>Session PIN (from your host)</label>
+    <input type="text" id="join-pin" placeholder="1234" maxlength="4" style="margin-top:4px;letter-spacing:8px;font-size:28px;text-align:center;font-weight:700" inputmode="numeric">
+    <label style="margin-top:8px">Your name</label>
+    <input type="text" id="join-name" placeholder="Your name" maxlength="24" style="margin-top:4px">
+    <div class="err" id="join-err"></div>
+  </div>
+  <button class="btn btn-t" style="width:100%;padding:14px;font-size:15px" onclick="fellowJoin()">&#8594; Join</button>
+</div>
+
+<div id="s-fellow-wait" class="screen">
+  <div style="text-align:center;padding:3rem 1rem">
+    <div style="font-size:40px;margin-bottom:12px">⏳</div>
+    <p style="font-size:18px;font-weight:600;color:#111" id="fw-name"></p>
+    <p style="font-size:13px;color:#666;margin-top:6px">Waiting for host...</p>
+    <div style="margin-top:2rem">
+      <p style="font-size:12px;color:#666">Your score</p>
+      <p style="font-size:40px;font-weight:700;color:#3C3489;margin-top:4px" id="fw-score">0</p>
+      <p style="font-size:12px;color:#999;margin-top:8px" id="fw-rank"></p>
+    </div>
+  </div>
+</div>
+
+<div id="s-fellow-q" class="screen">
+  <div class="nav">
+    <span style="font-size:12px;color:#666" id="fq-name"></span>
+    <span style="font-size:16px;font-weight:700;color:#3C3489" id="fq-timer-txt">30</span>
+  </div>
+  <div class="tbar-wrap"><div class="tbar" id="fq-tbar"></div></div>
+  <div class="card">
+    <div id="fq-tag" class="tag tag-q"></div>
+    <p style="font-size:15px;font-weight:600;color:#111;line-height:1.55;margin-bottom:1rem" id="fq-text"></p>
+    <div id="fq-opts"></div>
+  </div>
+</div>
+
+<div id="s-fellow-result" class="screen">
+  <div class="card" style="text-align:center;padding:2.5rem 1.25rem">
+    <div style="font-size:48px;margin-bottom:12px" id="fr-icon"></div>
+    <p style="font-size:20px;font-weight:700;color:#111;margin-bottom:8px" id="fr-msg"></p>
+    <p style="font-size:13px;color:#666;margin-bottom:1.5rem" id="fr-detail"></p>
+    <p style="font-size:12px;color:#666">Total score</p>
+    <p style="font-size:40px;font-weight:700;color:#3C3489;margin-top:4px" id="fr-total"></p>
+  </div>
+  <p style="text-align:center;font-size:13px;color:#999">Waiting for next question...</p>
+</div>
+
+<div id="s-final" class="screen">
+  <div class="nav">
+    <button class="btn" style="font-size:12px;padding:6px 12px" onclick="go('s-home')">&#8962; Home</button>
+    <span style="font-size:14px;font-weight:600">Final results</span>
+    <button class="btn btn-p" style="font-size:12px;padding:6px 12px" onclick="showHostSetup()">&#8635; New</button>
+  </div>
+  <div id="final-podium"></div>
+  <div id="final-lb"></div>
+</div>
+
+</div>
+<script>
+const SUPABASE_URL='https://sdcrgozivsnzxdmftcfp.supabase.co';
+const SUPABASE_KEY='eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InNkY3Jnb3ppdnNuenhkbWZ0Y2ZwIiwicm9sZSI6ImFub24iLCJpYXQiOjE3Nzg5NjM5MzgsImV4cCI6MjA5NDUzOTkzOH0.M_10_OypW6OOLglNdP8bNTrLRrxyrRf4Er_hxL3dxHU';
+const H={'Content-Type':'application/json','apikey':SUPABASE_KEY,'Authorization':'Bearer '+SUPABASE_KEY};
+const L=['A','B','C','D'];
+
+const SLIDES=[
+  // ── CASE 1: AF + Amiodarone Thyrotoxicosis + Post-thyroidectomy ──
+  {type:'case',title:'Case 1',body:'70-year-old female referred for osteoporosis\nLowest T-score: \u22122.9 in PA spine\nComplains of frequent heartburn\nOn exam: pulse 100 and irregular'},
+  {type:'case',title:'Case 1 \u2014 ECG (Question 1)',body:'ECG at PCP showing irregular rhythm consistent with atrial fibrillation\n\nRef: Cantillon, ClevelandClinicMed 2018'},
+  {type:'quiz',title:'Question 1',caseRef:'Case 1: 70F, osteoporosis, heartburn, P 100 irregular on exam',q:'Which disorder is NOT associated with increased risk of atrial fibrillation?',opts:['Diabetes','Subclinical hyperthyroidism','Primary hyperaldosteronism','All are associated with increased risk'],c:3,type:'quiz',explain:'All three \u2014 subclinical hyperthyroidism, diabetes/metabolic syndrome, and primary hyperaldosteronism \u2014 are associated with increased AF risk. Ref: Cappola JAMA 2018, Benjamin JAMA 1994, Monticone Lancet Diab Endocrinol 2018'},
+  {type:'teach',title:'Endocrinopathies and AF Risk',body:'\u2022 Overt or subclinical hyperthyroidism\n\u2022 Diabetes or metabolic syndrome\n\u2022 Primary hyperaldosteronism\n\nRef: Cappola JAMA 2018 \u00b7 Benjamin JAMA 1994 \u00b7 Monticone Lancet 2018'},
+  {type:'case',title:'Case 1 \u2014 PCP Follow-up (Question 2)',body:'P 98 \u00b7 BP 142/74\nNo medications \u00b7 Non-smoker \u00b7 1 glass wine/week\nBMP normal \u00b7 A1c 5.8% \u00b7 LDL 145 \u00b7 TSH 0.78 (0.4\u20135)\nPCP starts metoprolol\nAssessment for anticoagulation needed'},
+  {type:'quiz',title:'Question 2',caseRef:'Case 1: 70F with AF, HTN, female gender, age 65\u201374, on metoprolol',q:'Which factor below increases the CHA\u2082DS\u2082-VASc risk score for needing anticoagulation?',opts:['Dyslipidemia','History of falls','Female gender','Alcohol use'],c:2,type:'quiz',explain:'Female gender adds 1 point to CHA\u2082DS\u2082-VASc. This patient scores 3 points: female gender + hypertension + age 65\u201374. She is started on apixaban. Ref: Szymanski Am J Cardiol 2015'},
+  {type:'teach',title:'CHA\u2082DS\u2082-VASc Score',body:'This patient has 3 points:\n\u2022 Female gender\n\u2022 Hypertension\n\u2022 Age 65\u201374\n\u2192 Started on apixaban\n\nRef: Szymanski, Am J Cardiol 2015'},
+  {type:'case',title:'Case 1 \u2014 2 Months Later (Question 3)',body:'Admission for AF with RVR \u2192 started on amiodarone\n\nPCP follow-up 1 month later:\nTSH 0.98 (0.4\u20135) \u00b7 Free T4 2.0 ng/dL (0.8\u20131.8)\nPCP notifies you'},
+  {type:'quiz',title:'Question 3',caseRef:'Case 1: On amiodarone, TSH 0.98 (normal), Free T4 2.0 (mildly elevated)',q:'What do you advise the PCP regarding the elevated free T4 on amiodarone?',opts:['Repeat TFTs in 4\u20136 weeks','Obtain iodine-123 radioiodine uptake and scan of the thyroid','Start methimazole 5 mg daily','Start methimazole 5 mg daily and prednisone 5 mg daily'],c:1,type:'quiz',explain:'Amiodarone commonly elevates free T4 by blocking T4\u2192T3 conversion. With normal TSH, obtain RAI uptake and scan to classify AIT type 1 vs type 2 before starting treatment. Repeating TFTs in 4\u20136 weeks is an alternative if clinical stability allows.'},
+  {type:'case',title:'Case 1 \u2014 Endocrine Follow-up (Question 4)',body:'1 month: Patient feels well \u00b7 TSH 0.98 \u00b7 Free T4 1.9 \u00b7 T3 135\n\n3 months: Patient complains of dyspnea\nP 100 \u00b7 O\u2082 sat 87% \u00b7 Rales on exam\nTSH <0.01 \u00b7 Free T4 4.0 ng/dL \u00b7 T3 350 ng/dL\n\u2192 Referred to ED'},
+  {type:'quiz',title:'Question 4',caseRef:'Case 1: TSH <0.01, Free T4 4.0, T3 350, dyspnea, O\u2082 87%, referred to ED',q:'Patient referred to ED with overt thyrotoxicosis on amiodarone \u2014 next best step?',opts:['Start prednisone, repeat labs in 3\u20134 weeks','Start prednisone and methimazole, obtain technetium scan','Start prednisone and methimazole, request urgent surgical referral','Start methimazole and discontinue amiodarone'],c:2,type:'quiz',explain:'Hemodynamically compromised AIT with O\u2082 87% and rales warrants urgent surgical referral (total thyroidectomy). Prednisone + methimazole covers both AIT types while awaiting surgery. Discontinuing amiodarone alone is insufficient given the severity.'},
+  {type:'case',title:'Case 1 \u2014 Post Total Thyroidectomy (Questions 5\u20136)',body:'Patient undergoes total thyroidectomy \u2014 no intraoperative complications\nPOD 1: feels better but notes tingling in face and extremities'},
+  {type:'quiz',title:'Question 5',caseRef:'Case 1 post-thyroidectomy: tingling in face and extremities POD 1',q:'What is the next best step?',opts:['Empirically start vitamin D','Order calcium and PTH','Order ACTH and cortisol','Order TSH and free T4'],c:1,type:'quiz',explain:'Tingling post-thyroidectomy strongly suggests hypocalcemia from hypoparathyroidism. Order calcium and PTH immediately. PTH < 10 pg/mL predicts increased risk of permanent hypoparathyroidism.'},
+  {type:'quiz',title:'Question 6',caseRef:'Case 1: Post-thyroidectomy, PTH < 10, tingling, Chvostek positive',q:'Which result predicts increased risk of permanent postoperative hypoparathyroidism?',opts:['1,25-OH Vitamin D < 30','PTH < 10 pg/mL','Calcium < 8.4 mg/dL','None of the above'],c:1,type:'quiz',explain:'PTH < 10 pg/mL in the immediate postoperative period is the best predictor of permanent hypoparathyroidism. Calcium is less predictive and must be corrected for albumin. Bisphosphonates should be avoided with hypocalcemia. Ref: Khan J Bone Miner Res 2022'},
+  {type:'teach',title:'Postoperative Hypoparathyroidism',body:'\u2022 PTH < 10 = best predictor of permanent hypoparathyroidism\n\u2022 Calcium less predictive (correct for albumin)\n\u2022 Bisphosphonates contraindicated with hypocalcemia\n\u2022 Hypoparathyroidism \u2192 low bone turnover state\n\nManagement:\n\u2022 Calcitriol 0.5 mcg BID + Calcium carbonate 500 mg TID\n\u2022 Vitamin D 2000 IU daily + Levothyroxine 50 mcg daily\n\nRef: Khan J Bone Miner Res 2022'},
+  {type:'case',title:'Case 1 \u2014 Inpatient Follow-up (Question 7)',body:'Positive Chvostek \u00b7 Tingling persists\nCa 7.6 mg/dL (8.5\u201310.5) \u00b7 Vit D 25 ng/mL \u00b7 PTH 9 pg/mL\n\nStarted: Calcitriol 0.5 mcg BID + Calcium carbonate 500 mg TID\nVitamin D 2000 IU daily + Levothyroxine 50 mcg daily'},
+  {type:'quiz',title:'Question 7',caseRef:'Case 1 outpatient: Ca 9.9, PO\u2084 4.7 (high), PTH 37, Vit D 44, on calcitriol + calcium',q:'In addition to starting calcium and vitamin D, what is the next best step for hypoparathyroidism?',opts:['Start calcitriol','Repeat laboratories in 1\u20132 weeks','Check 1,25-OH Vitamin D level','Start zoledronate'],c:0,type:'quiz',explain:'Calcitriol (active vitamin D) is essential in hypoparathyroidism because PTH-driven 1-alpha hydroxylation is absent. High phosphate suggests ongoing hypoparathyroidism. Zoledronate is contraindicated with hypocalcemia. Ref: Khan J Bone Miner Res 2022'},
+  {type:'case',title:'Case 1 \u2014 Outpatient Follow-up (Question 8)',body:'P 60 \u00b7 BP 108/73 \u00b7 Wt 56 kg \u00b7 Ht 157 cm\nOn levothyroxine 50 mcg daily\nTSH 18 \u00b7 Free T4 0.7\nReports missing no doses\n\nMedications: Calcium carbonate 500 mg TID \u00b7 Calcitriol 0.5 mcg BID\nLevothyroxine 50 mcg \u00b7 Apixaban \u00b7 Metoprolol \u00b7 Amiodarone 200 mg BID'},
+  {type:'quiz',title:'Question 8',caseRef:'Case 1: TSH 18, Free T4 0.7, on levothyroxine 50 mcg, taking all meds, also on amiodarone + calcium carbonate',q:'Patient on levothyroxine with persistently high TSH, no missed doses \u2014 next best step?',opts:['Increase to 75 mcg, repeat in 3\u20134 weeks','Increase to 88 mcg, repeat in 3\u20134 weeks','Inquire what time of day she takes levothyroxine','Start liothyronine 5 mcg daily'],c:2,type:'quiz',explain:'Calcium carbonate significantly reduces levothyroxine absorption when taken together \u2014 should be separated by 4 hours. Amiodarone also affects thyroid hormone metabolism. Before increasing the dose, ask about timing of levothyroxine relative to calcium. This is the most common correctable cause of elevated TSH on therapy.'},
+  {type:'case',title:'Case 1 \u2014 Further Follow-up (Question 9)',body:'Ca 9.9 \u00b7 Alb 4 \u00b7 PO\u2084 4.7 (2.8\u20134.5) \u00b7 PTH 37 (15\u201370)\nVitamin D 44 (20\u201380) \u00b7 Cr 0.9\n\nPTH rise suggests recovery of parathyroid function\nMedications unchanged'},
+  {type:'quiz',title:'Question 9',caseRef:'Case 1: PTH 37 (recovering), Ca 9.9, PO\u2084 4.7 (elevated), on calcitriol + calcium carbonate',q:'PTH rising, calcium normal, phosphate elevated \u2014 next best step?',opts:['Lower dose of calcitriol','Lower dose of calcium carbonate','Stop calcitriol and calcium carbonate','Maintain current regimen'],c:0,type:'quiz',explain:'Elevated phosphate with rising PTH suggests partial parathyroid recovery. Lowering calcitriol is the best first step \u2014 wean slowly as parathyroid function may still be insufficient. Ref: Khan J Bone Miner Res 2022'},
+
+  // ── CASE 2: OAB / Empagliflozin / TMP-SMX ──
+  {type:'case',title:'Case 2 (Question 10)',body:'78-year-old female with CKD followed for type 2 diabetes\nBMI 21 \u00b7 On empagliflozin 10 mg daily for 5 years\nCr 1.3 \u00b7 A1c 6.7%\n\nPast several months: urgency and frequent urinary leakage'},
+  {type:'quiz',title:'Question 10',caseRef:'Case 2: 78F on empagliflozin, urgency incontinence',q:'Which intervention will most likely relieve her symptoms?',opts:['Pelvic floor exercises','Discontinue empagliflozin','Antibiotics','Replace empagliflozin with canagliflozin'],c:0,type:'quiz',explain:'This is overactive bladder (OAB) \u2014 spontaneous urgency with leakage, common in older women. SGLT2i use may complicate but does not necessarily cause OAB. First-line is pelvic floor exercises and lifestyle modification. Ref: Holroyd-Leduc JAMA 2008, Lukacz JAMA 2017'},
+  {type:'teach',title:'Urinary Incontinence \u2014 Overview',body:'Prevalence: 10\u201320% in women \u00b7 77% in SNF\n\nTypes:\n\u2022 Stress: triggered by sneeze/cough/exertion \u00b7 younger women\n\u2022 Overflow: incomplete voiding, continuous leakage\n\u2022 OAB: spontaneous urgency \u00b7 older women\n\nOAB Treatment:\n1. Pelvic floor exercises + lifestyle + medication review\n2. Beta-3 agonists: mirabegron, vibegron\n3. Muscarinic antagonists: oxybutynin, solifenacin (more side effects, ? dementia)\n\nRef: Holroyd-Leduc JAMA 2008 \u00b7 Lukacz JAMA 2017'},
+  {type:'case',title:'Case 2 \u2014 3 Months Later (Question 11)',body:'Only modest improvement on pelvic floor exercises\nUrinalysis: 1+ WBC \u00b7 Leukocyte esterase negative \u00b7 Nitrites negative\n\u2192 Started on vibegron'},
+  {type:'quiz',title:'Question 11',caseRef:'Case 2: On vibegron, UA shows 1+ WBC, leukocyte esterase and nitrites negative',q:'Which agent would most likely be of additional benefit?',opts:['Tamsulosin','Pessary placement','Continue vibegron','Antibiotic treatment'],c:2,type:'quiz',explain:'UA findings (1+ WBC without positive LE or nitrites) are not consistent with UTI \u2014 no antibiotics needed. Vibegron is appropriate for OAB and should be continued with adequate time to work. Tamsulosin is for BPH. Pessary is for prolapse/stress incontinence.'},
+  {type:'case',title:'Case 2 \u2014 1 Week Later (Question 12)',body:'Limited improvement on vibegron\nPatient presents to outside urgent care\n\u2192 New medication prescribed (patient does not recall name)'},
+  {type:'quiz',title:'Question 12',caseRef:'Case 2: On vibegron, limited improvement, new unknown medication from urgent care',q:'Patient on vibegron with persistent OAB \u2014 next best step?',opts:['Discontinue vibegron, start solifenacin','Discontinue vibegron, start mirabegron','Assurance and follow up with PCP in 3\u20134 weeks','Add oxybutynin'],c:2,type:'quiz',explain:'Vibegron takes weeks for full effect. Assurance and continued follow-up is appropriate. Switching to solifenacin or adding oxybutynin increases anticholinergic burden \u2014 especially concerning in a 78-year-old at cognitive risk. Mirabegron and vibegron are the same class.'},
+  {type:'case',title:'Case 2 \u2014 3 Days Later (Question 13)',body:'Presents to ED with weakness and sweating\nAfebrile \u00b7 BP 140/70 \u00b7 P 80\nBUN 40 \u00b7 Cr 1.8 \u00b7 Glucose 43 mg/dL\nUrinalysis negative\nRecalls being prescribed a medication at urgent care'},
+  {type:'quiz',title:'Question 13',caseRef:'Case 2: 78F on empagliflozin, glucose 43, prescribed unknown med at urgent care, CKD',q:'Which agent could cause hypoglycemia in this patient?',opts:['Vibegron','Trimethoprim-sulfamethoxazole','Nitrofurantoin','None \u2014 hypoglycemia is likely sepsis related'],c:1,type:'quiz',explain:'TMP-SMX has a sulfonylurea-like effect, stimulating insulin secretion via KATP channel blockade. Risk factors include age, CKD, and malnutrition \u2014 all present here. Classic board scenario. Ref: Wang Front Endocrinol 2023'},
+  {type:'teach',title:'TMP-SMX Induced Hypoglycemia',body:'\u2022 TMP-SMX has a sulfonylurea-like effect on pancreatic beta cells\n\u2022 Relatively rare but clinically significant\n\u2022 Risk factors: age \u00b7 CKD \u00b7 malnutrition\n\u2022 Classic: elderly patient with CKD prescribed TMP-SMX for UTI\n\nRef: Wang, Front Endocrinol (Lausanne) 2023'},
+
+  // ── CASE 3: Sulfonylurea toxicity / insulinoma ──
+  {type:'case',title:'Case 3',body:'52-year-old male with hypertension\nFrequent sweating, anxiety, recent syncopal event\nMedication: Hydrochlorothiazide\nBP 160/71 \u00b7 P 90 \u00b7 BMI 32.1\nUncomfortable appearing, diaphoretic'},
+  {type:'case',title:'Case 3 \u2014 Laboratories (Question 14)',body:'Cr 1.1 \u00b7 Electrolytes normal \u00b7 Glucose 39\u201340 mg/dL\n\u03b2-hydroxybutyrate 0.5 nmol/L (normal/low \u2014 rules out starvation/adrenal insufficiency)\nInsulin studies pending'},
+  {type:'quiz',title:'Question 14',caseRef:'Case 3: 52M, glucose 39\u201340, diaphoretic, \u03b2-hydroxybutyrate 0.5 (low/normal)',q:'Which is the next best test to order?',opts:['Plasma metanephrines','Sulfonylurea screen','Hemoglobin A1c','Cosyntropin stimulation test'],c:1,type:'quiz',explain:'Endogenous hyperinsulinism with low \u03b2-hydroxybutyrate. Pheo causes hyperglycemia, not hypoglycemia. Normal \u03b2-hydroxybutyrate rules out adrenal insufficiency (>2.7 expected). Sulfonylurea screen distinguishes insulinoma from surreptitious use.'},
+  {type:'case',title:'Case 3 \u2014 More Results (Question 15)',body:'Insulin 25 mIU/mL (1.4\u201314) \u2014 elevated\nC-peptide 3 ng/mL (0.5\u20132) \u2014 elevated\n\u2192 Endogenous hyperinsulinism confirmed\n\nSulfonylurea screen: POSITIVE\nOn dextrose \u00b7 After 3 hours glucose 85 \u00b7 Wants to go home'},
+  {type:'quiz',title:'Question 15',caseRef:'Case 3: Sulfonylurea toxicity confirmed, glucose 85 after 3 hours on dextrose, wants discharge',q:'A proinsulin level will distinguish insulinoma from sulfonylurea toxicity.',opts:['True','False'],c:1,type:'tf',explain:'False. Both insulinoma and sulfonylurea toxicity cause elevated proinsulin. The sulfonylurea screen is what distinguishes them. Ref: Klein-Schwartz Br J Clin Pharm 2018'},
+  {type:'quiz',title:'Question 16',caseRef:'Case 3: Sulfonylurea toxicity, glucose 85, patient wants to go home after 3 hours',q:'What is the next best step in management?',opts:['Start TPN','Discharge home with close follow up','Treat with adjunctive glucagon','Treat with adjunctive octreotide'],c:3,type:'quiz',explain:'Octreotide is the adjunctive treatment \u2014 it suppresses sulfonylurea-stimulated insulin secretion. Glucagon is limited (hepatic glycogen depleted). Most patients need \u226512 hours observation as hypoglycemia frequently recurs. Discharge after 3 hours is unsafe. Ref: Klein-Schwartz Br J Clin Pharm 2018'},
+  {type:'teach',title:'Sulfonylurea Toxicity \u2014 Management',body:'\u2022 Mainstay: dextrose infusion (enteral feeding preferred)\n\u2022 Octreotide: adjunctive \u2014 suppresses insulin secretion\n\u2022 Glucagon: limited use (hepatic glycogen depleted)\n\u2022 Minimum 12 hours observation\n\u2022 Hypoglycemia frequently recurs after stopping dextrose\n\nRef: Klein-Schwartz Br J Clin Pharm 2018'},
+
+  // ── CASE 4: Graves / Hirata ──
+  {type:'case',title:'Case 4',body:'32-year-old male recently emigrated from Japan\nPresents to initiate care for Graves disease\nOn methimazole ~16 months\nNotes frequent sweating and shakiness after eating'},
+  {type:'case',title:'Case 4 \u2014 Glucose History (Question 17)',body:'Once borrowed glucometer: glucose 54 after lunch\nNext day same lunch: glucose 156\n\nCGM: hyperglycemia immediately after meals \u2192 delayed hypoglycemia\nMixed meal test: same pattern\n\nTSH 2.1 \u00b7 Free T4 1.1 \u00b7 A1c 5.2%'},
+  {type:'quiz',title:'Question 17',caseRef:'Case 4: 32M from Japan, on methimazole, post-meal hyperglycemia then delayed hypoglycemia on CGM',q:'Which would be the next most useful test?',opts:['Thyroid function tests','Urine 5-HIAA','Hemoglobin A1c','Continuous glucose monitoring'],c:3,type:'quiz',explain:'The pattern of post-meal hyperglycemia followed by delayed hypoglycemia is classic for Hirata syndrome (insulin autoimmune syndrome). CGM confirms this pattern and is the most useful next test here.'},
+  {type:'quiz',title:'Question 18',caseRef:'Case 4: Japanese male on methimazole, post-meal hypoglycemia pattern confirmed on CGM',q:'Which test would most likely reveal the etiology?',opts:['Insulin autoantibodies','Add-on T3','Sulfonylurea screen','72-hour fast'],c:0,type:'quiz',explain:'Hirata syndrome is caused by insulin autoantibodies \u2014 common in East Asian patients and associated with methimazole and alpha-lipoic acid. Antibodies sequester insulin causing post-meal hyperglycemia, then release it causing delayed hypoglycemia. Ref: Cappelini Diab Metab Syndr Obes 2020'},
+  {type:'teach',title:'Hirata Syndrome',body:'Mechanism:\n\u2022 Insulin autoantibodies sequester post-meal insulin \u2192 hyperglycemia\n\u2022 Low-affinity antibodies eventually release insulin \u2192 delayed hypoglycemia\n\nAssociations:\n\u2022 East Asian descent \u00b7 Methimazole \u00b7 Alpha-lipoic acid\n\nManagement:\n\u2022 Treatment benefit not established\n\u2022 High rates of spontaneous remission\n\nRef: Cappelini Diab Metab Syndr Obes Target Ther 2020'},
+  {type:'case',title:'Case 4 \u2014 Methimazole Wean (Question 19)',body:'Weaned off methimazole over next few months\nFewer hypoglycemia episodes\n3 months after stoppage: TSH 1.8 \u00b7 TRAb negative'},
+  {type:'quiz',title:'Question 19',caseRef:'Case 4: Graves, TRAb negative, TSH 1.8, 3 months after stopping methimazole',q:'Which factor does NOT predict increased likelihood of Graves remission?',opts:['Negative TRAb titer','Age < 40','Absence of goiter','Absence of orbitopathy'],c:1,type:'quiz',explain:'Age < 40 does NOT predict remission \u2014 younger patients have lower remission rates. Negative TRAb, small/absent goiter, and absence of orbitopathy all predict increased likelihood of sustained remission after antithyroid drug therapy.'},
+
+  // ── CASE 5: Goiter / Flow Loop ──
+  {type:'case',title:'Case 5 (Question 20)',body:'45-year-old male referred from holistic medicine practitioner\nUnderwent ultrasound for dyspnea complaint\n3 cm right-sided nodule found\nTSH 0.8 \u00b7 Started on levothyroxine 50 mcg 3 weeks ago for "goiter suppression"'},
+  {type:'teach',title:'Levothyroxine for Goiter Suppression',body:'No longer recommended per ATA guidelines\nSome evidence it may work, but NOT if TSH < 1\nRisk of overtreatment and iatrogenic thyrotoxicosis\n\nRef: Haugen, Thyroid 2015'},
+  {type:'quiz',title:'Question 20',caseRef:'Case 5: 45M, 3 cm thyroid nodule, TSH 0.8, on LT4 for suppression, FNA pending',q:'What is the next best course of action?',opts:['FNA, repeat TFTs in 3 weeks','Repeat TFTs in 3 weeks, repeat US in 3 months','FNA, discontinue levothyroxine','Discontinue levothyroxine, repeat US in 3 months'],c:2,type:'quiz',explain:'FNA is indicated for a 3 cm nodule. Levothyroxine suppression is no longer recommended (ATA 2015) and should be discontinued \u2014 TSH is already low-normal. Ref: Haugen Thyroid 2015'},
+  {type:'case',title:'Case 5 \u2014 Follow-up (Questions 21\u201322)',body:'FNA returns benign\nHolistic practitioner orders PFTs: tells patient he needs surgery for "obstructive pattern"\n\nPatient reports:\n\u2022 Occasional dyspnea with exertion\n\u2022 Fullness when lying on left side\n\u2022 No stridor'},
+  {type:'quiz',title:'Question 21',caseRef:'Case 5: Compressive goiter, dyspnea with exertion, fullness when lying on left side, no stridor',q:'Which treatment will most likely help with the dyspnea?',opts:['Hemithyroidectomy','Iodine-131 radioiodine ablation','Bronchodilator therapy','None of the above'],c:0,type:'quiz',explain:'Hemithyroidectomy is appropriate for compressive symptoms from a benign nodule. Bronchodilators treat lower airway disease, not fixed upper airway compression. Radioiodine ablation is used for hyperthyroidism/toxic goiter. Ref: Haugen Thyroid 2015'},
+  {type:'quiz',title:'Question 22',caseRef:'Case 5: Compressive thyroid nodule, flow-loop shows flattened inspiratory limb',q:'Which flow-loop tracing is consistent with obstruction from a thyroid nodule?',opts:['A \u2014 plateau/flattening on inspiratory limb','B \u2014 plateau on expiratory limb','C \u2014 plateau on both limbs','None of the above'],c:0,type:'quiz',explain:'Fixed extrathoracic obstruction (e.g. thyroid nodule) causes flattening of the inspiratory limb. Expiratory flattening = intrathoracic. Both flattened = fixed central/tracheal. Asthma/COPD = scooped expiratory tracing. Ref: Stoller CCJM 1992 \u00b7 Miller Eur J Resp 2005'},
+  {type:'teach',title:'Flow-Loop Patterns',body:'\u2022 Normal: smooth bell curve on both limbs\n\u2022 Fixed extrathoracic (thyroid nodule): flat inspiratory limb\n\u2022 Fixed intrathoracic: flat expiratory limb\n\u2022 Fixed central (tracheal): flat both limbs\n\u2022 Asthma/COPD: scooped expiratory tracing\n\nRef: Stoller CCJM 1992 \u00b7 Miller Eur J Resp 2005'},
+
+  // ── CASE 6: Headache / Prolactinoma / Cabergoline ──
+  {type:'case',title:'Case 6 (Question 23)',body:'40-year-old male with allergic rhinitis\nHeadache \u2014 abrupt onset ~2 weeks ago \u00b7 No recent trauma\nWorsens with sneezing\nDenies fever, neck stiffness \u00b7 Exam unremarkable'},
+  {type:'quiz',title:'Question 23',caseRef:'Case 6: 40M, allergic rhinitis, headache worsened with sneezing, abrupt onset, no trauma',q:'Which of the following is an indication for neuroimaging ("red flag")?',opts:['Age < 50','Allergic rhinitis','Absence of recent trauma','Headache worsened with Valsalva or sneezing'],c:3,type:'quiz',explain:'Headache worsened with Valsalva or sneezing is associated with Chiari malformation (40%) and is a neuroimaging red flag. Age > 50 with new headache, abrupt onset, and recent trauma are also red flags. Allergic rhinitis is not. Ref: Do Neurology 2019'},
+  {type:'teach',title:'Headache Red Flags',body:'Indications for neuroimaging:\n\u2022 Age > 50 with new headache\n\u2022 Headache worsened with sneezing or Valsalva\n\u2022 Abrupt/thunderclap onset\n\u2022 Recent trauma\n\u2022 Fever + neck stiffness\n\u2022 Progressive neurological deficit\n\nRef: Do, Neurology 2019'},
+  {type:'case',title:'Case 6 \u2014 MRI & Endocrine Referral (Question 24)',body:'MRI performed \u2192 referred to endocrine\nVisual fields normal \u00b7 Less headaches\nPoor libido and erectile dysfunction\nTestosterone 173 ng/dL \u00b7 Prolactin 479 ng/mL\nOther tests normal (TFTs, IGF-1)\n\u2192 Prolactinoma diagnosed'},
+  {type:'quiz',title:'Question 24',caseRef:'Case 6: Prolactinoma, PRL 479, testosterone 173, poor libido and ED',q:'What is the next best step?',opts:['Start cabergoline','Repeat MRI in 3 months','Start testosterone','Surgery referral'],c:0,type:'quiz',explain:'Cabergoline is first-line for prolactinoma \u2014 reduces prolactin and tumor size in >90% of cases. Testosterone supplementation would further suppress LH/FSH. Surgery is reserved for cabergoline-resistant cases.'},
+  {type:'case',title:'Case 6 \u2014 Follow-up on Cabergoline (Question 25)',body:'6 weeks after cabergoline:\nHad been single \u2014 now reports 3\u20134 female partners per week\nScrolling through dating app during office visit\nTestosterone 568 \u00b7 Prolactin 3\n\n12 weeks: behavior continues'},
+  {type:'quiz',title:'Question 25',caseRef:'Case 6: On cabergoline, PRL 3, T 568, hypersexual and compulsive dating app use',q:'What is the most likely cause of this behavior?',opts:['Low prolactin level','Rate of rise in testosterone','Direct dopamine agonist effect of cabergoline','None of the above'],c:2,type:'quiz',explain:'Dopamine agonists cause impulse control disorders in 15\u201320% of patients \u2014 including hypersexuality and compulsive behaviors. Low prolactin has no known clinical impact in males. Testosterone rise is not known to cause this behavior.'},
+  {type:'teach',title:'Dopamine Agonists and Impulse Control',body:'\u2022 Cabergoline causes impulse control disorders in 15\u201320% of patients\n\u2022 Includes: hypersexuality \u00b7 compulsive gambling \u00b7 binge eating\n\u2022 No known clinical impact of low prolactin in males\n\u2022 Management: dose reduction or switch to alternative\n\nRef: Valassi Eur J Endocrinol 2012'},
+  {type:'case',title:'Case 6 \u2014 STD Screening (Question 26)',body:'You express concern about his behavior and he acknowledges it\nHe asks whether he needs STD screening\nReports only heterosexual relations \u00b7 No current symptoms'},
+  {type:'quiz',title:'Question 26',caseRef:'Case 6: Male patient, multiple recent sexual partners, heterosexual, no symptoms',q:'Which statement is true regarding STD screening in this patient?',opts:['Hepatitis B immunity status should be assessed','No symptoms means screening is not needed','Only heterosexual relations means HIV screening is not needed','None of the above'],c:0,type:'quiz',explain:'Hepatitis B immunity status should always be assessed in sexually active patients with multiple partners. Asymptomatic STIs are common \u2014 screening is not limited to symptomatic patients. HIV screening is recommended for all sexually active adults regardless of orientation.'},
+
+  // ── CASE 7: MODY ──
+  {type:'case',title:'Case 7 (Questions 27\u201329)',body:'24-year-old female referred for hyperglycemia over past year\nA1c 6.4% \u00b7 GAD65 antibodies negative \u00b7 BMI 22\nGlucometer: fasting 84\u2013100 \u00b7 Post-prandial 140\u2013180\nFather and 1 of 2 siblings with diabetes'},
+  {type:'quiz',title:'Question 27',caseRef:'Case 7: 24F, A1c 6.4%, GAD65 negative, BMI 22, strong autosomal dominant family history',q:'Which is the most likely gene mutation?',opts:['HNF1A','HNF1B','KCNJ11','CFTR'],c:0,type:'quiz',explain:'Classic MODY 3 (HNF1A mutation): young, non-obese, autoantibody negative, strong AD family history, post-prandial hyperglycemia with near-normal fasting glucose. HNF1B (MODY 5) is associated with renal abnormalities. KCNJ11 = neonatal diabetes. CFTR = CF-related diabetes.'},
+  {type:'quiz',title:'Question 28',caseRef:'Case 7: HNF1A-MODY (MODY 3) confirmed',q:'What is the next best step in management?',opts:['Glipizide','Metformin','Insulin','Pioglitazone'],c:0,type:'quiz',explain:'HNF1A-MODY is exquisitely sensitive to sulfonylureas \u2014 low-dose glipizide is first-line. Metformin is less effective. Insulin not needed initially. This is a critical distinction from type 1 and type 2 diabetes. Ref: Pearson Lancet 2003'},
+  {type:'quiz',title:'Question 29',caseRef:'Case 7: MODY \u2014 comparing HNF1A vs HNF1B',q:'Which statement is true regarding HNF1B-MODY?',opts:['Can be managed with sulfonylurea lifelong','50% chance offspring will have this condition','Increased microvascular but not macrovascular risk','May have abnormal renal development'],c:1,type:'quiz',explain:'MODY follows autosomal dominant inheritance \u2192 50% chance offspring are affected. HNF1B (MODY 5) is associated with renal developmental abnormalities (cysts, dysplasia). Both have micro- and macrovascular risk. Ref: Pearson Lancet 2003'},
+  {type:'teach',title:'HNF1A-MODY (MODY 3)',body:'\u2022 Autosomal dominant \u2192 50% chance offspring affected\n\u2022 Presenting age typically < 25\n\u2022 Sulfonylurea highly effective for initial management\n\u2022 Eventually may require insulin\n\u2022 Risk for micro- and macrovascular complications\n\nHNF1B-MODY (MODY 5):\n\u2022 Associated with renal developmental abnormalities\n\u2022 Renal cysts, dysplasia\n\u2022 Less sulfonylurea-responsive\n\nRef: Pearson Lancet 2003'},
+];
+
+const QUIZ_SLIDES=SLIDES.filter(s=>s.type==='quiz'||s.type==='tf');
+let PIN='',NAME='',ROLE='',TSEC=30,curIdx=0,curQIdx=0,tIv=null,tLeft=30,fAnswered=false,myScore=0,pollIv=null,lastQNum=-1,lastPhase='';
+
+function go(id){document.querySelectorAll('.screen').forEach(s=>s.classList.remove('active'));document.getElementById(id).classList.add('active');}
+function showHostSetup(){go('s-host-setup');}
+function showJoin(){go('s-join');}
+
+async function dbGet(pin){try{const r=await fetch(`${SUPABASE_URL}/rest/v1/quiz_sessions?id=eq.${pin}&select=state`,{headers:H});const d=await r.json();return d&&d.length?d[0].state:null;}catch(e){return null;}}
+async function dbSet(pin,state){try{await fetch(`${SUPABASE_URL}/rest/v1/quiz_sessions`,{method:'POST',headers:{...H,'Prefer':'resolution=merge-duplicates'},body:JSON.stringify({id:pin,state,updated_at:new Date().toISOString()})});}catch(e){}}
+function mkPIN(){return String(Math.floor(1000+Math.random()*9000));}
+
+async function hostCreate(){
+  const hn=document.getElementById('host-name').value.trim();
+  if(!hn){document.getElementById('host-name-err').textContent='Please enter your name';return;}
+  TSEC=parseInt(document.getElementById('timer-setting').value)||30;
+  ROLE='host';NAME=hn;PIN=mkPIN();curIdx=0;
+  await dbSet(PIN,{phase:'lobby',slideIdx:0,qNum:-1,revealed:false,timer:TSEC,players:{},answers:{},ts:Date.now()});
+  document.getElementById('pin-display').textContent=PIN;
+  go('s-lobby');pollLobby();
+}
+function pollLobby(){
+  clearInterval(pollIv);
+  pollIv=setInterval(async()=>{const st=await dbGet(PIN);if(!st)return;const names=Object.keys(st.players||{});document.getElementById('joined-count').textContent=names.length;document.getElementById('joined-list').innerHTML=names.map(n=>`<span class="joined-pill">👤 ${n}</span>`).join('');},2000);
+}
+async function hostStartSession(){clearInterval(pollIv);curIdx=0;await renderHostSlide();}
+async function renderHostSlide(){
+  const s=SLIDES[curIdx];
+  const st=await dbGet(PIN)||{players:{},answers:{}};
+  const qNum=(s.type==='quiz'||s.type==='tf')?QUIZ_SLIDES.indexOf(s):-1;
+  await dbSet(PIN,{...st,phase:(s.type==='quiz'||s.type==='tf')?'question':'slide',slideIdx:curIdx,qNum,revealed:false,timer:TSEC});
+  if(s.type==='quiz'||s.type==='tf'){
+    curQIdx=qNum;go('s-host-q');renderHostQ(s,st,qNum);
+    clearInterval(tIv);tLeft=TSEC;
+    document.getElementById('hq-reveal-btn').disabled=false;
+    document.getElementById('hq-next-btn').textContent=curIdx===SLIDES.length-1?'Finish':'Next \u2192';
+    updHTimer(1);
+    tIv=setInterval(async()=>{tLeft=Math.max(0,tLeft-0.1);updHTimer(tLeft/TSEC);if(tLeft<=0){clearInterval(tIv);await hostReveal();}if(Math.round(tLeft*10)%20===0)await refreshLive();},100);
+  } else {
+    go('s-host-slide');
+    document.getElementById('hs-counter').textContent=`Slide ${curIdx+1} of ${SLIDES.length}`;
+    document.getElementById('hs-prog').style.width=((curIdx+1)/SLIDES.length*100)+'%';
+    document.getElementById('hs-prev-btn').disabled=curIdx===0;
+    document.getElementById('hs-next-btn').textContent=curIdx===SLIDES.length-1?'Finish':'Next \u2192';
+    document.getElementById('hs-joined').textContent=Object.keys(st.players||{}).length+' joined';
+    let html='';
+    if(s.type==='teach') html=`<div class="teach-card"><span class="tag tag-teach">Teaching point</span><div style="font-size:16px;font-weight:600;color:#111;margin-bottom:.75rem">${s.title}</div><div class="bullet">${s.body}</div></div>`;
+    else if(s.type==='case') html=`<div class="case-card"><span class="tag tag-case">Clinical case</span><div style="font-size:16px;font-weight:600;color:#185FA5;margin-bottom:.75rem">${s.title}</div><div class="bullet">${s.body}</div></div>`;
+    document.getElementById('hs-content').innerHTML=html;
+  }
+}
+function renderHostQ(s,st,qNum){
+  const total=QUIZ_SLIDES.length;
+  document.getElementById('hq-counter').textContent=`Q${qNum+1} of ${total}`;
+  document.getElementById('hq-tag').textContent=s.type==='tf'?'True or false':`Question ${qNum+1} of ${total}`;
+  document.getElementById('hq-tag').className='tag '+(s.type==='tf'?'tag-tf':'tag-q');
+  document.getElementById('hq-text').textContent=s.q;
+  document.getElementById('hq-explain').style.display='none';
+  document.getElementById('hq-total-count').textContent=Object.keys(st.players||{}).length;
+  document.getElementById('hq-ans-count').textContent='0';
+  document.getElementById('hq-live-lb').innerHTML='';
+  document.getElementById('hq-case').innerHTML=s.caseRef?`<div style="font-size:12px;color:#185FA5;background:#E6F1FB;border-radius:8px;padding:8px 12px;margin-bottom:8px">${s.caseRef}</div>`:'';
+  document.getElementById('hq-opts').innerHTML=s.opts.map((o,i)=>`<div class="opt" id="ho${i}"><span class="letter">${L[i]}</span>${o}</div>`).join('');
+}
+function updHTimer(f){const b=document.getElementById('hq-tbar'),t=document.getElementById('hq-timer-txt');if(b){b.style.width=(f*100)+'%';b.className='tbar'+(f<0.25?' warn':'');}if(t)t.textContent=Math.ceil(tLeft);}
+async function refreshLive(){
+  const st=await dbGet(PIN);if(!st)return;
+  const players=st.players||{},answers=st.answers||{},qa=answers[String(curQIdx)]||{};
+  document.getElementById('hq-ans-count').textContent=Object.keys(qa).length;
+  document.getElementById('hq-total-count').textContent=Object.keys(players).length;
+  const sorted=Object.entries(players).sort((a,b)=>b[1]-a[1]).slice(0,5);
+  document.getElementById('hq-live-lb').innerHTML=sorted.map(([n,sc],i)=>`<div class="lrow"><span class="lrank">${i+1}</span><span class="lname">${n}</span>${qa[n]!==undefined?`<span style="font-size:11px;background:#EEEDFE;color:#3C3489;padding:2px 6px;border-radius:6px">${Number(qa[n])===QUIZ_SLIDES[curQIdx].c?'\u2713':'\u2717'}</span>`:''}<span class="lscore">${sc}</span></div>`).join('');
+  document.getElementById('hq-sync').textContent='\u25cf live';
+}
+async function hostReveal(){
+  clearInterval(tIv);document.getElementById('hq-reveal-btn').disabled=true;
+  const s=QUIZ_SLIDES[curQIdx];
+  s.opts.forEach((_,i)=>{const el=document.getElementById('ho'+i);if(el)el.className='opt '+(i===s.c?'showc':'wrong');});
+  document.getElementById('hq-explain').style.display='block';
+  document.getElementById('hq-explain').textContent=s.explain||'Correct answer: '+s.opts[s.c];
+  const st=await dbGet(PIN);if(st)await dbSet(PIN,{...st,revealed:true});
+  await refreshLive();
+}
+async function hostNext(){if(curIdx>=SLIDES.length-1){await hostFinish();return;}curIdx++;await renderHostSlide();}
+async function hostPrev(){if(curIdx>0){curIdx--;await renderHostSlide();}}
+async function hostNextAfterQ(){if(curIdx>=SLIDES.length-1){await hostFinish();return;}curIdx++;await renderHostSlide();}
+async function hostFinish(){clearInterval(tIv);const st=await dbGet(PIN);if(st)await dbSet(PIN,{...st,phase:'final'});go('s-final');renderFinal(st);}
+async function hostEnd(){clearInterval(tIv);clearInterval(pollIv);go('s-home');}
+
+function renderFinal(st){
+  const players=st?st.players||{}:{};
+  const sorted=Object.entries(players).sort((a,b)=>b[1]-a[1]);
+  const colors=['#534AB7','#1D9E75','#BA7517'],heights=[110,80,60];
+  const order=sorted.length>=3?[1,0,2]:sorted.length===2?[1,0]:[0];
+  document.getElementById('final-podium').innerHTML=`<div class="podium">${order.filter(i=>i<sorted.length).map(i=>`<div class="pod"><div class="pod-name">${sorted[i][0]}</div><div class="pod-pts">${sorted[i][1]} pts</div><div class="pod-block" style="height:${heights[i]}px;background:${colors[i]};color:white">${['\ud83e\udd47','\ud83e\udd48','\ud83e\udd49'][i]}</div></div>`).join('')}</div>`;
+  document.getElementById('final-lb').innerHTML=sorted.map(([n,s],i)=>`<div class="lrow"><span class="lrank">${['\ud83e\udd47','\ud83e\udd48','\ud83e\udd49'][i]||i+1}</span><span class="lname">${n}</span><span class="lscore">${s} pts</span></div>`).join('');
+}
+
+async function fellowJoin(){
+  const pin=document.getElementById('join-pin').value.trim(),name=document.getElementById('join-name').value.trim();
+  if(!pin||pin.length!==4){document.getElementById('join-err').textContent='Enter the 4-digit PIN';return;}
+  if(!name){document.getElementById('join-err').textContent='Enter your name';return;}
+  document.getElementById('join-err').textContent='Connecting...';
+  const st=await dbGet(pin);
+  if(!st){document.getElementById('join-err').textContent='Session not found \u2014 check the PIN and try again';return;}
+  PIN=pin;NAME=name;ROLE='fellow';myScore=st.players&&st.players[name]?st.players[name]:0;TSEC=st.timer||30;
+  await dbSet(PIN,{...st,players:{...st.players,[name]:myScore}});
+  document.getElementById('join-err').textContent='';
+  document.getElementById('fw-name').textContent='Joined as '+name;
+  document.getElementById('fw-score').textContent=myScore;
+  go('s-fellow-wait');pollFellow();
+}
+function pollFellow(){
+  clearInterval(pollIv);lastQNum=-1;lastPhase='';
+  pollIv=setInterval(async()=>{
+    const st=await dbGet(PIN);if(!st)return;
+    if(st.phase==='final'){clearInterval(pollIv);go('s-final');renderFinal(st);return;}
+    if(st.phase==='question'&&st.qNum!==lastQNum){lastQNum=st.qNum;fAnswered=false;TSEC=st.timer||30;loadFQ(st.qNum);}
+    if(st.phase==='slide'&&lastPhase!=='slide'){lastPhase='slide';go('s-fellow-wait');document.getElementById('fw-score').textContent=myScore;const sorted=Object.entries(st.players||{}).sort((a,b)=>b[1]-a[1]);const rank=sorted.findIndex(([n])=>n===NAME)+1;if(rank>0)document.getElementById('fw-rank').textContent=`Rank ${rank} of ${sorted.length}`;}
+    if(st.phase==='lobby'){lastPhase='lobby';document.getElementById('fw-score').textContent=myScore;}
+    myScore=(st.players||{})[NAME]||myScore;
+  },1500);
+}
+function loadFQ(qNum){
+  clearInterval(tIv);const s=QUIZ_SLIDES[qNum];
+  go('s-fellow-q');
+  document.getElementById('fq-name').textContent=NAME;
+  document.getElementById('fq-tag').textContent=s.type==='tf'?'True or false':`Question ${qNum+1} of ${QUIZ_SLIDES.length}`;
+  document.getElementById('fq-tag').className='tag '+(s.type==='tf'?'tag-tf':'tag-q');
+  document.getElementById('fq-text').textContent=s.q;
+  document.getElementById('fq-opts').innerHTML=s.opts.map((o,i)=>`<button class="opt" onclick="fAnswer(${i},${qNum})"><span class="letter">${L[i]}</span>${o}</button>`).join('');
+  tLeft=TSEC;updFTimer(1);
+  tIv=setInterval(()=>{tLeft=Math.max(0,tLeft-0.1);updFTimer(tLeft/TSEC);if(tLeft<=0){clearInterval(tIv);if(!fAnswered)fAnswer(-1,qNum);}},100);
+}
+function updFTimer(f){const b=document.getElementById('fq-tbar'),t=document.getElementById('fq-timer-txt');if(b){b.style.width=(f*100)+'%';b.className='tbar'+(f<0.25?' warn':'');}if(t)t.textContent=Math.ceil(tLeft);}
+async function fAnswer(idx,qNum){
+  if(fAnswered)return;fAnswered=true;clearInterval(tIv);
+  const s=QUIZ_SLIDES[qNum],correct=idx===s.c,pts=correct?Math.round(100+(tLeft/TSEC)*200):0;
+  if(correct)myScore+=pts;
+  const st=await dbGet(PIN);
+  if(st){const ans=st.answers||{},qa=ans[String(qNum)]||{};qa[NAME]=idx;await dbSet(PIN,{...st,players:{...st.players,[NAME]:myScore},answers:{...ans,[String(qNum)]:qa}});}
+  go('s-fellow-result');
+  document.getElementById('fr-icon').textContent=idx===-1?'\u23f1\ufe0f':correct?'\u2705':'\u274c';
+  document.getElementById('fr-msg').textContent=idx===-1?"Time's up!":correct?'Correct!':'Incorrect';
+  document.getElementById('fr-detail').textContent=correct?`+${pts} points \u2014 faster = more`:`Correct: ${s.opts[s.c]}`;
+  document.getElementById('fr-total').textContent=myScore+' pts';
+  setTimeout(()=>{lastPhase='';go('s-fellow-wait');document.getElementById('fw-score').textContent=myScore;},3500);
+}
+</script>
+</body>
+</html>
