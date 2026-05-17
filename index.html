@@ -1,0 +1,422 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Endocrinology Board Review</title>
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;background:#f5f5f5;min-height:100vh;display:flex;justify-content:center;padding:1rem}
+.app{width:100%;max-width:480px}
+.screen{display:none}.screen.active{display:block}
+.btn{background:#fff;border:1px solid #ddd;border-radius:10px;padding:9px 18px;font-size:14px;cursor:pointer;color:#222;transition:background 0.15s;font-family:inherit;width:auto}
+.btn:hover{background:#f0f0f0}
+.btn:disabled{opacity:0.35;cursor:default;pointer-events:none}
+.btn-p{background:#3C3489;color:#EEEDFE;border-color:#3C3489}.btn-p:hover{background:#534AB7}
+.btn-t{background:#085041;color:#E1F5EE;border-color:#085041}.btn-t:hover{background:#0F6E56}
+.btn-r{background:#A32D2D;color:#FCEBEB;border-color:#A32D2D}.btn-r:hover{background:#c0392b}
+.card{background:#fff;border:1px solid #e5e5e5;border-radius:14px;padding:1.25rem;margin-bottom:1rem}
+.opt{display:flex;align-items:center;gap:10px;padding:12px 14px;border:1px solid #ddd;border-radius:10px;cursor:pointer;font-size:14px;color:#222;background:#fff;text-align:left;width:100%;transition:all 0.15s;font-family:inherit;margin-bottom:8px}
+.opt:hover:not([disabled]){background:#EEEDFE;border-color:#AFA9EC}
+.opt[disabled]{cursor:default}
+.opt.showc{background:#d4edda;border-color:#28a745;color:#155724}
+.opt.wrong{background:#f8d7da;border-color:#dc3545;color:#721c24}
+.letter{width:28px;height:28px;border-radius:50%;background:#f0f0f0;display:flex;align-items:center;justify-content:center;font-size:12px;font-weight:600;flex-shrink:0;color:#555}
+.tbar-wrap{height:5px;background:#eee;border-radius:3px;margin-bottom:1rem;overflow:hidden}
+.tbar{height:100%;border-radius:3px;background:#534AB7;transition:width 0.15s linear}
+.tbar.warn{background:#dc3545}
+.prog-wrap{height:3px;background:#eee;border-radius:2px;margin-bottom:.75rem}
+.prog{height:100%;background:#534AB7;border-radius:2px;transition:width .3s}
+.nav{display:flex;align-items:center;justify-content:space-between;margin-bottom:.75rem;gap:8px}
+.tag{display:inline-block;font-size:11px;font-weight:600;padding:3px 9px;border-radius:8px;margin-bottom:.6rem}
+.tag-q{background:#EEEDFE;color:#3C3489}
+.tag-tf{background:#E1F5EE;color:#085041}
+.lrow{display:flex;align-items:center;gap:10px;padding:9px 12px;border-radius:10px;background:#f7f7f7;font-size:13px;margin-bottom:5px}
+.lrank{width:22px;text-align:center;color:#999;font-weight:600;font-size:12px}
+.lname{flex:1;color:#222;font-size:13px}
+.lscore{font-weight:600;color:#3C3489;font-size:13px}
+.lantag{font-size:11px;background:#EEEDFE;color:#3C3489;padding:2px 7px;border-radius:8px}
+.joined-pill{display:inline-flex;align-items:center;gap:5px;font-size:12px;padding:4px 10px;border-radius:8px;background:#f0f0f0;color:#555;margin:2px}
+.big-num{font-size:56px;font-weight:700;color:#3C3489;text-align:center;line-height:1;letter-spacing:8px}
+input{width:100%;padding:11px 13px;border:1px solid #ddd;border-radius:10px;font-size:15px;background:#fff;color:#222;margin-bottom:8px;font-family:inherit}
+input:focus{outline:none;border-color:#534AB7}
+.err{font-size:12px;color:#dc3545;margin-top:4px;min-height:16px}
+.podium{display:flex;align-items:flex-end;justify-content:center;gap:8px;margin:1rem 0 1.5rem}
+.pod{display:flex;flex-direction:column;align-items:center;gap:4px}
+.pod-name{font-size:11px;color:#666;text-align:center;max-width:72px;overflow:hidden;white-space:nowrap;text-overflow:ellipsis}
+.pod-pts{font-size:11px;font-weight:600;color:#3C3489}
+.pod-block{border-radius:4px 4px 0 0;width:68px;display:flex;align-items:center;justify-content:center;font-size:22px}
+h1{font-size:20px;font-weight:600;color:#111;margin-bottom:4px}
+label{font-size:12px;color:#666;display:block;margin-bottom:4px}
+</style>
+</head>
+<body>
+<div class="app">
+
+<div id="s-home" class="screen active">
+  <div class="card" style="border-left:4px solid #3C3489;border-radius:0 14px 14px 0;margin-top:.5rem">
+    <h1>Endocrinology Board Review</h1>
+    <p style="font-size:13px;color:#666;margin-top:4px">29 questions &middot; Live multiplayer &middot; No login needed</p>
+  </div>
+  <div style="display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-bottom:1rem">
+    <button class="btn btn-p" style="padding:18px 8px;font-size:14px;display:flex;flex-direction:column;align-items:center;gap:6px;width:100%" onclick="showHostSetup()">
+      <span style="font-size:26px">🎓</span>
+      <span style="font-weight:600">I am the host</span>
+      <span style="font-size:11px;opacity:.8">Run the session</span>
+    </button>
+    <button class="btn btn-t" style="padding:18px 8px;font-size:14px;display:flex;flex-direction:column;align-items:center;gap:6px;width:100%" onclick="showJoin()">
+      <span style="font-size:26px">👤</span>
+      <span style="font-weight:600">I am a fellow</span>
+      <span style="font-size:11px;opacity:.8">Join on any device</span>
+    </button>
+  </div>
+  <p style="font-size:12px;color:#999;text-align:center">Fellows open this page on any browser and tap "I am a fellow"</p>
+</div>
+
+<div id="s-host-setup" class="screen">
+  <div class="nav">
+    <button class="btn" style="font-size:12px;padding:6px 12px" onclick="go('s-home')">&larr; Back</button>
+    <span style="font-size:13px;color:#666">Host setup</span>
+    <span></span>
+  </div>
+  <div class="card">
+    <p style="font-size:14px;font-weight:600;margin-bottom:12px">Session settings</p>
+    <label>Timer per question (seconds)</label>
+    <div style="display:flex;align-items:center;gap:10px;margin:6px 0 16px">
+      <input type="range" min="15" max="90" value="30" step="5" id="timer-setting" style="flex:1;margin-bottom:0;padding:0;border:none;background:none" oninput="document.getElementById('timer-val').textContent=this.value+'s'">
+      <span id="timer-val" style="font-size:15px;font-weight:600;color:#3C3489;min-width:36px">30s</span>
+    </div>
+    <label>Your name</label>
+    <input type="text" id="host-name" placeholder="Dr. Sinha" maxlength="24" style="margin-top:4px">
+    <div class="err" id="host-name-err"></div>
+  </div>
+  <button class="btn btn-p" style="width:100%;padding:14px;font-size:15px" onclick="hostCreate()">&#9658; Create session</button>
+</div>
+
+<div id="s-lobby" class="screen">
+  <div class="nav">
+    <button class="btn btn-r" style="font-size:12px;padding:6px 12px" onclick="hostEnd()">&times; End</button>
+    <span style="font-size:13px;font-weight:600">Waiting for fellows</span>
+    <button class="btn btn-p" style="font-size:12px;padding:6px 12px" onclick="hostStartQ()">&#9658; Start</button>
+  </div>
+  <div class="card" style="text-align:center;padding:2rem 1.25rem">
+    <p style="font-size:12px;color:#666;margin-bottom:10px">Share this PIN with your fellows</p>
+    <div class="big-num" id="pin-display">----</div>
+    <p style="font-size:12px;color:#666;margin-top:12px">Fellows open this same page on any browser<br>Tap <strong>"I am a fellow"</strong> &rarr; enter PIN &rarr; join</p>
+  </div>
+  <p style="font-size:12px;color:#666;margin-bottom:6px">Joined (<span id="joined-count">0</span>)</p>
+  <div id="joined-list" style="display:flex;flex-wrap:wrap;gap:4px;min-height:32px"></div>
+</div>
+
+<div id="s-host-q" class="screen">
+  <div class="nav">
+    <button class="btn btn-r" style="font-size:12px;padding:6px 10px" onclick="hostEnd()">&times;</button>
+    <span style="font-size:12px;color:#666" id="hq-counter">1 / 29</span>
+    <span style="font-size:16px;font-weight:700;color:#3C3489" id="hq-timer-txt">30</span>
+  </div>
+  <div class="prog-wrap"><div class="prog" id="hq-prog"></div></div>
+  <div class="tbar-wrap"><div class="tbar" id="hq-tbar"></div></div>
+  <div class="card">
+    <div id="hq-tag" class="tag tag-q"></div>
+    <p style="font-size:15px;font-weight:600;color:#111;line-height:1.55;margin-bottom:1rem" id="hq-text"></p>
+    <div id="hq-opts"></div>
+    <div id="hq-explain" style="display:none;padding:.9rem;background:#f7f7f7;border-radius:10px;font-size:13px;color:#555;line-height:1.6;margin-top:.5rem"></div>
+  </div>
+  <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:.5rem">
+    <span style="font-size:12px;color:#666">Answered: <span id="hq-ans-count">0</span> / <span id="hq-total-count">0</span></span>
+    <span style="font-size:11px;color:#28a745" id="hq-sync"></span>
+  </div>
+  <div id="hq-live-lb" style="margin-bottom:.75rem"></div>
+  <div style="display:flex;gap:8px">
+    <button class="btn" id="hq-reveal-btn" style="flex:1" onclick="hostReveal()">&#128065; Reveal</button>
+    <button class="btn btn-p" id="hq-next-btn" style="flex:1" onclick="hostNext()">Next &rarr;</button>
+  </div>
+</div>
+
+<div id="s-join" class="screen">
+  <div class="nav">
+    <button class="btn" style="font-size:12px;padding:6px 12px" onclick="go('s-home')">&larr; Back</button>
+    <span style="font-size:13px;color:#666">Join session</span>
+    <span></span>
+  </div>
+  <div class="card">
+    <label>Session PIN (from your host)</label>
+    <input type="text" id="join-pin" placeholder="1234" maxlength="4" style="margin-top:4px;letter-spacing:8px;font-size:28px;text-align:center;font-weight:700" inputmode="numeric">
+    <label style="margin-top:8px">Your name</label>
+    <input type="text" id="join-name" placeholder="Your name" maxlength="24" style="margin-top:4px">
+    <div class="err" id="join-err"></div>
+  </div>
+  <button class="btn btn-t" style="width:100%;padding:14px;font-size:15px" onclick="fellowJoin()">&#8594; Join</button>
+</div>
+
+<div id="s-fellow-wait" class="screen">
+  <div style="text-align:center;padding:3rem 1rem">
+    <div style="font-size:40px;margin-bottom:12px">⏳</div>
+    <p style="font-size:18px;font-weight:600;color:#111" id="fw-name"></p>
+    <p style="font-size:13px;color:#666;margin-top:6px">Waiting for host to start...</p>
+    <div style="margin-top:2rem">
+      <p style="font-size:12px;color:#666">Your score</p>
+      <p style="font-size:40px;font-weight:700;color:#3C3489;margin-top:4px" id="fw-score">0</p>
+      <p style="font-size:12px;color:#999;margin-top:8px" id="fw-rank"></p>
+    </div>
+  </div>
+</div>
+
+<div id="s-fellow-q" class="screen">
+  <div class="nav">
+    <span style="font-size:12px;color:#666" id="fq-name"></span>
+    <span style="font-size:16px;font-weight:700;color:#3C3489" id="fq-timer-txt">30</span>
+  </div>
+  <div class="tbar-wrap"><div class="tbar" id="fq-tbar"></div></div>
+  <div class="card">
+    <div id="fq-tag" class="tag tag-q"></div>
+    <p style="font-size:15px;font-weight:600;color:#111;line-height:1.55;margin-bottom:1rem" id="fq-text"></p>
+    <div id="fq-opts"></div>
+  </div>
+</div>
+
+<div id="s-fellow-result" class="screen">
+  <div class="card" style="text-align:center;padding:2.5rem 1.25rem">
+    <div style="font-size:48px;margin-bottom:12px" id="fr-icon"></div>
+    <p style="font-size:20px;font-weight:700;color:#111;margin-bottom:8px" id="fr-msg"></p>
+    <p style="font-size:13px;color:#666;margin-bottom:1.5rem" id="fr-detail"></p>
+    <p style="font-size:12px;color:#666">Total score</p>
+    <p style="font-size:40px;font-weight:700;color:#3C3489;margin-top:4px" id="fr-total"></p>
+  </div>
+  <p style="text-align:center;font-size:13px;color:#999;padding:.5rem">Waiting for next question...</p>
+</div>
+
+<div id="s-final" class="screen">
+  <div class="nav">
+    <button class="btn" style="font-size:12px;padding:6px 12px" onclick="go('s-home')">&#8962; Home</button>
+    <span style="font-size:14px;font-weight:600">Final results</span>
+    <button class="btn btn-p" style="font-size:12px;padding:6px 12px" onclick="showHostSetup()">&#8635; New</button>
+  </div>
+  <div id="final-podium"></div>
+  <div id="final-lb"></div>
+</div>
+
+</div>
+
+<script>
+const SUPABASE_URL='https://sdcrgozivsnzxdmftcfp.supabase.co';
+const SUPABASE_KEY='eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InNkY3Jnb3ppdnNuenhkbWZ0Y2ZwIiwicm9sZSI6ImFub24iLCJpYXQiOjE3Nzg5NjM5MzgsImV4cCI6MjA5NDUzOTkzOH0.M_10_OypW6OOLglNdP8bNTrLRrxyrRf4Er_hxL3dxHU';
+const H={'Content-Type':'application/json','apikey':SUPABASE_KEY,'Authorization':'Bearer '+SUPABASE_KEY};
+
+const QS=[
+  {q:"Which disorder is NOT associated with risk of atrial fibrillation?",opts:["Diabetes","Subclinical hyperthyroidism","Primary hyperaldosteronism","All are associated with increased risk"],c:3,type:"quiz"},
+  {q:"Which factor below increases the CHA\u2082DS\u2082-VASc risk score for anticoagulation?",opts:["Dyslipidemia","History of falls","Female gender","Alcohol use"],c:2,type:"quiz"},
+  {q:"Patient with incidental subclinical hyperthyroidism \u2014 what do you advise the PCP?",opts:["Repeat TFTs in 4\u20136 weeks","Obtain iodine-123 radioiodine uptake and scan","Start methimazole 5 mg daily","Start methimazole and prednisone 5 mg daily"],c:1,type:"quiz"},
+  {q:"Patient with amiodarone-induced thyrotoxicosis referred to ED \u2014 next best step?",opts:["Start prednisone, repeat labs in 3\u20134 weeks","Start prednisone and methimazole, obtain technetium scan","Start prednisone and methimazole, request urgent surgical referral","Start methimazole and discontinue amiodarone"],c:2,type:"quiz"},
+  {q:"Post-thyroidectomy patient with hypocalcemia \u2014 next best step?",opts:["Empirically start vitamin D","Order calcium and PTH","Order ACTH and cortisol","Order TSH and free T4"],c:1,type:"quiz"},
+  {q:"Which result predicts increased risk of permanent postoperative hypoparathyroidism?",opts:["1,25-OH Vitamin D < 30","PTH < 10","Calcium < 8.4 mg/dL","None of the above"],c:1,type:"quiz"},
+  {q:"In addition to calcium and vitamin D, what is the next best step for hypoparathyroidism?",opts:["Start calcitriol","Repeat laboratories in 1\u20132 weeks","Check 1,25-OH Vitamin D level","Start zoledronate"],c:0,type:"quiz"},
+  {q:"Patient on levothyroxine with persistently high TSH \u2014 next best step?",opts:["Increase to 75 mcg, repeat in 3\u20134 weeks","Increase to 88 mcg, repeat in 3\u20134 weeks","Inquire what time of day she takes levothyroxine","Start liothyronine 5 mcg daily"],c:2,type:"quiz"},
+  {q:"Patient on calcitriol and calcium develops hypercalcemia \u2014 next best step?",opts:["Lower dose of calcitriol","Lower dose of calcium","Stop calcitriol and calcium","Maintain current regimen"],c:0,type:"quiz"},
+  {q:"Which intervention will most likely relieve stress urinary incontinence in a patient on empagliflozin?",opts:["Pelvic floor exercises","Discontinue empagliflozin","Antibiotics","Replace empagliflozin with canagliflozin"],c:0,type:"quiz"},
+  {q:"Patient with OAB on vibegron \u2014 which agent would most likely be of additional benefit?",opts:["Tamsulosin","Pessary placement","Continue vibegron","Antibiotic treatment"],c:2,type:"quiz"},
+  {q:"Patient on vibegron with persistent OAB symptoms \u2014 next best step?",opts:["Discontinue vibegron, start solifenacin","Discontinue vibegron, start mirabegron","Assurance and follow up with PCP in 3\u20134 weeks","Add oxybutynin"],c:2,type:"quiz"},
+  {q:"Which agent could cause hypoglycemia in a patient on a sulfonylurea with a UTI?",opts:["Vibegron","Trimethoprim-sulfamethoxazole","Nitrofurantoin","None \u2014 hypoglycemia is likely sepsis related"],c:1,type:"quiz"},
+  {q:"Patient with recurrent hypoglycemia \u2014 next best test to order?",opts:["Plasma metanephrines","Sulfonylurea screen","Hemoglobin A1c","Cosyntropin stimulation test"],c:1,type:"quiz"},
+  {q:"A proinsulin level will distinguish insulinoma from sulfonylurea toxicity.",opts:["True","False"],c:1,type:"tf"},
+  {q:"Patient with VIPoma and severe secretory diarrhea \u2014 next best step?",opts:["Start TPN","Discharge home with close follow up","Treat with adjunctive glucagon","Treat with adjunctive octreotide"],c:3,type:"quiz"},
+  {q:"Patient with recurrent hypoglycemia after gastric bypass \u2014 next most useful test?",opts:["Thyroid function tests","Urine 5-HIAA","Hemoglobin A1c","Continuous glucose monitoring"],c:3,type:"quiz"},
+  {q:"Patient with fasting hypoglycemia \u2014 which test would most likely reveal the etiology?",opts:["Insulin autoantibodies","Add-on T3","Sulfonylurea screen","72-hour fast"],c:0,type:"quiz"},
+  {q:"Which factor does NOT predict increased likelihood of remission in Graves disease?",opts:["Negative TRAb titer","Age < 40","Absence of goiter","Absence of orbitopathy"],c:1,type:"quiz"},
+  {q:"Patient with thyroid nodule on levothyroxine \u2014 next best course of action?",opts:["FNA, repeat TFTs in 3 weeks","Repeat TFTs in 3 weeks, repeat US in 3 months","FNA, discontinue levothyroxine","Discontinue levothyroxine, repeat US in 3 months"],c:2,type:"quiz"},
+  {q:"Patient with large compressive goiter and dyspnea \u2014 which treatment will most likely help?",opts:["Hemithyroidectomy","Iodine-131 radioiodine ablation","Bronchodilator therapy","None of the above"],c:2,type:"quiz"},
+  {q:"Which flow-loop tracing is consistent with fixed extrathoracic obstruction from a thyroid nodule?",opts:["A \u2014 plateau on inspiratory limb","B \u2014 plateau on expiratory limb","C \u2014 plateau on both limbs","None of the above"],c:0,type:"quiz"},
+  {q:"Which is a 'red flag' indication for neuroimaging in headache evaluation?",opts:["Age < 50","Allergic rhinitis","Absence of recent trauma","Headache worsened with Valsalva or sneeze"],c:3,type:"quiz"},
+  {q:"Patient with prolactinoma on cabergoline with MRI showing growth \u2014 next best step?",opts:["Increase cabergoline dose","Repeat MRI in 3 months","Start testosterone","Surgery referral"],c:0,type:"quiz"},
+  {q:"Patient on cabergoline develops compulsive gambling \u2014 most likely cause?",opts:["Low prolactin level","Rate of rise in testosterone","Direct dopamine agonist effect of cabergoline","None of the above"],c:2,type:"quiz"},
+  {q:"Which statement is true regarding STD screening in a transgender male on testosterone?",opts:["Hepatitis B immunity status should be assessed","No symptoms means screening is not needed","Only heterosexual relations means HIV screening not needed","None of the above"],c:0,type:"quiz"},
+  {q:"Patient with neonatal diabetes features and family history \u2014 most likely gene mutation?",opts:["HNF1A","HNF1B","KCNJ11","CFTR"],c:0,type:"quiz"},
+  {q:"Patient with HNF1A-MODY \u2014 next best step in management?",opts:["Glipizide","Metformin","Insulin","Pioglitazone"],c:0,type:"quiz"},
+  {q:"Which statement is true regarding HNF1B-MODY?",opts:["Can be managed with sulfonylurea lifelong","50% chance offspring will have this condition","Increased microvascular but not macrovascular risk","May have abnormal renal development"],c:1,type:"quiz"}
+];
+
+const L=['A','B','C','D'];
+let PIN='',NAME='',ROLE='',TSEC=30,curQ=-1,tIv=null,tLeft=30,fAnswered=false,myScore=0,pollIv=null,lastQ=-1,lastRev=false;
+
+function go(id){document.querySelectorAll('.screen').forEach(s=>s.classList.remove('active'));document.getElementById(id).classList.add('active');}
+function showHostSetup(){go('s-host-setup');}
+function showJoin(){go('s-join');}
+
+async function dbGet(pin){
+  try{const r=await fetch(`${SUPABASE_URL}/rest/v1/quiz_sessions?id=eq.${pin}&select=state`,{headers:H});const d=await r.json();return d&&d.length?d[0].state:null;}catch(e){return null;}
+}
+async function dbSet(pin,state){
+  try{await fetch(`${SUPABASE_URL}/rest/v1/quiz_sessions`,{method:'POST',headers:{...H,'Prefer':'resolution=merge-duplicates'},body:JSON.stringify({id:pin,state,updated_at:new Date().toISOString()})});}catch(e){}
+}
+function mkPIN(){return String(Math.floor(1000+Math.random()*9000));}
+
+async function hostCreate(){
+  const hn=document.getElementById('host-name').value.trim();
+  if(!hn){document.getElementById('host-name-err').textContent='Please enter your name';return;}
+  document.getElementById('host-name-err').textContent='';
+  TSEC=parseInt(document.getElementById('timer-setting').value)||30;
+  ROLE='host';NAME=hn;PIN=mkPIN();
+  await dbSet(PIN,{phase:'lobby',q:-1,revealed:false,timer:TSEC,players:{},answers:{},ts:Date.now()});
+  document.getElementById('pin-display').textContent=PIN;
+  go('s-lobby');pollLobby();
+}
+
+function pollLobby(){
+  clearInterval(pollIv);
+  pollIv=setInterval(async()=>{
+    const st=await dbGet(PIN);if(!st)return;
+    const names=Object.keys(st.players||{});
+    document.getElementById('joined-count').textContent=names.length;
+    document.getElementById('joined-list').innerHTML=names.map(n=>`<span class="joined-pill">👤 ${n}</span>`).join('');
+  },2000);
+}
+
+async function hostStartQ(){clearInterval(pollIv);curQ=0;await runHostQ();}
+
+async function runHostQ(){
+  if(curQ>=QS.length){await hostFinish();return;}
+  clearInterval(tIv);tLeft=TSEC;
+  const st=await dbGet(PIN)||{players:{},answers:{}};
+  await dbSet(PIN,{...st,phase:'question',q:curQ,revealed:false,qTs:Date.now(),timer:TSEC});
+  go('s-host-q');renderHostQ(st);
+  document.getElementById('hq-reveal-btn').disabled=false;
+  document.getElementById('hq-next-btn').textContent=curQ===QS.length-1?'Finish':'Next →';
+  updHTimer(1);
+  tIv=setInterval(async()=>{
+    tLeft=Math.max(0,tLeft-0.1);updHTimer(tLeft/TSEC);
+    if(tLeft<=0){clearInterval(tIv);await hostReveal();}
+    if(Math.round(tLeft*10)%20===0)await refreshLive();
+  },100);
+}
+
+function renderHostQ(st){
+  const q=QS[curQ];
+  document.getElementById('hq-counter').textContent=`${curQ+1} / ${QS.length}`;
+  document.getElementById('hq-prog').style.width=((curQ+1)/QS.length*100)+'%';
+  document.getElementById('hq-tag').textContent=q.type==='tf'?'True or false':`Question ${curQ+1} of ${QS.length}`;
+  document.getElementById('hq-tag').className='tag '+(q.type==='tf'?'tag-tf':'tag-q');
+  document.getElementById('hq-text').textContent=q.q;
+  document.getElementById('hq-explain').style.display='none';
+  document.getElementById('hq-total-count').textContent=Object.keys(st.players||{}).length;
+  document.getElementById('hq-ans-count').textContent='0';
+  document.getElementById('hq-live-lb').innerHTML='';
+  document.getElementById('hq-opts').innerHTML=q.opts.map((o,i)=>`<div class="opt" id="ho${i}"><span class="letter">${L[i]}</span>${o}</div>`).join('');
+}
+
+function updHTimer(f){
+  const b=document.getElementById('hq-tbar'),t=document.getElementById('hq-timer-txt');
+  if(b){b.style.width=(f*100)+'%';b.className='tbar'+(f<0.25?' warn':'');}
+  if(t)t.textContent=Math.ceil(tLeft);
+}
+
+async function refreshLive(){
+  const st=await dbGet(PIN);if(!st)return;
+  const players=st.players||{},answers=st.answers||{},qa=answers[String(curQ)]||{};
+  document.getElementById('hq-ans-count').textContent=Object.keys(qa).length;
+  document.getElementById('hq-total-count').textContent=Object.keys(players).length;
+  const sorted=Object.entries(players).sort((a,b)=>b[1]-a[1]).slice(0,5);
+  document.getElementById('hq-live-lb').innerHTML=sorted.map(([n,s],i)=>`<div class="lrow"><span class="lrank">${i+1}</span><span class="lname">${n}</span>${qa[n]!==undefined?`<span class="lantag">${Number(qa[n])===QS[curQ].c?'✓':'✗'}</span>`:''}<span class="lscore">${s}</span></div>`).join('');
+  document.getElementById('hq-sync').textContent='● live';
+}
+
+async function hostReveal(){
+  clearInterval(tIv);
+  document.getElementById('hq-reveal-btn').disabled=true;
+  const q=QS[curQ];
+  q.opts.forEach((_,i)=>{const el=document.getElementById('ho'+i);if(el)el.className='opt '+(i===q.c?'showc':'wrong');});
+  document.getElementById('hq-explain').style.display='block';
+  document.getElementById('hq-explain').textContent='Correct answer: '+q.opts[q.c];
+  const st=await dbGet(PIN);if(st)await dbSet(PIN,{...st,revealed:true});
+  await refreshLive();
+}
+
+async function hostNext(){curQ++;await runHostQ();}
+
+async function hostFinish(){
+  clearInterval(tIv);
+  const st=await dbGet(PIN);if(st)await dbSet(PIN,{...st,phase:'final'});
+  go('s-final');renderFinal(st);
+}
+
+async function hostEnd(){clearInterval(tIv);clearInterval(pollIv);go('s-home');}
+
+function renderFinal(st){
+  const players=st?st.players||{}:{};
+  const sorted=Object.entries(players).sort((a,b)=>b[1]-a[1]);
+  const labels=['1st 🥇','2nd 🥈','3rd 🥉'],colors=['#534AB7','#1D9E75','#BA7517'],heights=[110,80,60];
+  const order=sorted.length>=3?[1,0,2]:sorted.length===2?[1,0]:[0];
+  document.getElementById('final-podium').innerHTML=`<div class="podium">${order.filter(i=>i<sorted.length).map(i=>`<div class="pod"><div class="pod-name">${sorted[i][0]}</div><div class="pod-pts">${sorted[i][1]} pts</div><div class="pod-block" style="height:${heights[i]}px;background:${colors[i]};color:white">${['🥇','🥈','🥉'][i]}</div></div>`).join('')}</div>`;
+  document.getElementById('final-lb').innerHTML=sorted.map(([n,s],i)=>`<div class="lrow"><span class="lrank">${['🥇','🥈','🥉'][i]||i+1}</span><span class="lname">${n}</span><span class="lscore">${s} pts</span></div>`).join('');
+}
+
+async function fellowJoin(){
+  const pin=document.getElementById('join-pin').value.trim();
+  const name=document.getElementById('join-name').value.trim();
+  if(!pin||pin.length!==4){document.getElementById('join-err').textContent='Enter the 4-digit PIN';return;}
+  if(!name){document.getElementById('join-err').textContent='Enter your name';return;}
+  document.getElementById('join-err').textContent='Connecting...';
+  const st=await dbGet(pin);
+  if(!st){document.getElementById('join-err').textContent='Session not found — check the PIN and try again';return;}
+  PIN=pin;NAME=name;ROLE='fellow';
+  myScore=st.players&&st.players[name]?st.players[name]:0;
+  TSEC=st.timer||30;
+  await dbSet(PIN,{...st,players:{...st.players,[name]:myScore}});
+  document.getElementById('join-err').textContent='';
+  document.getElementById('fw-name').textContent='Joined as '+name;
+  document.getElementById('fw-score').textContent=myScore;
+  go('s-fellow-wait');pollFellow();
+}
+
+function pollFellow(){
+  clearInterval(pollIv);lastQ=-1;lastRev=false;
+  pollIv=setInterval(async()=>{
+    const st=await dbGet(PIN);if(!st)return;
+    if(st.phase==='final'){clearInterval(pollIv);go('s-final');renderFinal(st);return;}
+    if(st.phase==='question'){
+      TSEC=st.timer||30;
+      if(st.q!==lastQ){lastQ=st.q;lastRev=false;fAnswered=false;curQ=st.q;loadFQ();}
+      myScore=(st.players||{})[NAME]||myScore;
+    }
+    if(st.phase==='lobby'){
+      document.getElementById('fw-score').textContent=myScore;
+      const sorted=Object.entries(st.players||{}).sort((a,b)=>b[1]-a[1]);
+      const rank=sorted.findIndex(([n])=>n===NAME)+1;
+      if(rank>0)document.getElementById('fw-rank').textContent=`Rank ${rank} of ${sorted.length}`;
+    }
+  },1500);
+}
+
+function loadFQ(){
+  clearInterval(tIv);const q=QS[curQ];
+  go('s-fellow-q');
+  document.getElementById('fq-name').textContent=NAME;
+  document.getElementById('fq-tag').textContent=q.type==='tf'?'True or false':`Question ${curQ+1} of ${QS.length}`;
+  document.getElementById('fq-tag').className='tag '+(q.type==='tf'?'tag-tf':'tag-q');
+  document.getElementById('fq-text').textContent=q.q;
+  document.getElementById('fq-opts').innerHTML=q.opts.map((o,i)=>`<button class="opt" onclick="fAnswer(${i})"><span class="letter">${L[i]}</span>${o}</button>`).join('');
+  tLeft=TSEC;updFTimer(1);
+  tIv=setInterval(()=>{tLeft=Math.max(0,tLeft-0.1);updFTimer(tLeft/TSEC);if(tLeft<=0){clearInterval(tIv);if(!fAnswered)fAnswer(-1);}},100);
+}
+
+function updFTimer(f){
+  const b=document.getElementById('fq-tbar'),t=document.getElementById('fq-timer-txt');
+  if(b){b.style.width=(f*100)+'%';b.className='tbar'+(f<0.25?' warn':'');}
+  if(t)t.textContent=Math.ceil(tLeft);
+}
+
+async function fAnswer(idx){
+  if(fAnswered)return;fAnswered=true;clearInterval(tIv);
+  const q=QS[curQ],correct=idx===q.c,pts=correct?Math.round(100+(tLeft/TSEC)*200):0;
+  if(correct)myScore+=pts;
+  const st=await dbGet(PIN);
+  if(st){const ans=st.answers||{},qa=ans[String(curQ)]||{};qa[NAME]=idx;await dbSet(PIN,{...st,players:{...st.players,[NAME]:myScore},answers:{...ans,[String(curQ)]:qa}});}
+  go('s-fellow-result');
+  document.getElementById('fr-icon').textContent=idx===-1?'⏱️':correct?'✅':'❌';
+  document.getElementById('fr-msg').textContent=idx===-1?"Time's up!":correct?'Correct!':'Incorrect';
+  document.getElementById('fr-detail').textContent=correct?`+${pts} points — faster = more points`:`Correct answer: ${q.opts[q.c]}`;
+  document.getElementById('fr-total').textContent=myScore+' pts';
+  setTimeout(()=>{go('s-fellow-wait');document.getElementById('fw-score').textContent=myScore;},3500);
+}
+</script>
+</body>
+</html>
